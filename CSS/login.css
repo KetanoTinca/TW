@@ -1,0 +1,287 @@
+
+        html {
+            font-family: sans-serif;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%
+        }
+
+        body {
+            margin: 0
+        }
+
+        footer,
+        section {
+            display: block
+        }
+
+        a {
+            background: transparent
+        }
+
+        a:active,
+        a:hover {
+            outline: 0
+        }
+
+       
+        h1 {
+            font-size: 2em;
+            margin: .67em 0
+        }
+
+
+        
+        input {
+            color: inherit;
+            font: inherit;
+            margin: 0
+        }
+
+
+        html input[type="button"]{
+            -webkit-appearance: button;
+            cursor: pointer
+        }
+
+        input {
+            line-height: normal
+        }
+
+        html {
+            font-family: "jaf-facitweb", "Helvetica Neue", Arial, sans-serif;
+            color: #4d4d4d;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.44em
+        }
+
+        
+        h1 {
+            font-size: 1.777em;
+            line-height: 1.2em;
+            margin-top: 1.6em
+        }
+
+        
+        a {
+            color: hsl(202, 40%, 55%)
+        }
+
+        a:hover {
+            color: hsl(202, 50%, 30%)
+        }
+
+        
+
+        
+        label {
+            display: block;
+            margin: 0 0 .4em
+        }
+
+        input {
+            display: block;
+            margin: 0 0 1.2em
+        }
+
+        
+        input[type="email"],
+        input[type="password"]{
+            background: #EDEFF0;
+            border-radius: 4px;
+            border: 1px solid #CDD2D4;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: .5em;
+            max-width: 400px;
+            width: 100%
+        }
+
+        
+        input[type="email"]:hover,
+        input[type="password"]:hover
+        {
+            border-color: #B6BBBF
+        }
+
+        
+        input[type="email"]:focus,
+        input[type="password"]:focus
+         {
+            border-color: #A5ACB0;
+            outline: none;
+            box-shadow: 0 0 6px #CDD2D4
+        }
+
+        
+        input[type="button"]:focus {
+            outline: none
+        }
+
+        .button {
+            background: #CDD2D4;
+            background: linear-gradient(to bottom, #CDD2D4 0%, #C4C9CC 100%);
+            border-radius: .3em;
+            box-shadow: 0 2px 0 hsl(0, 0%, 30%);
+            color: hsl(0, 0%, 30%);
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: .8em;
+            padding: .6em 1.3em;
+            position: relative;
+            text-decoration: none;
+            border: 0px
+        }
+
+        .button-green {
+            background: #d67e73;
+            background: linear-gradient(to bottom, #d67e73 0%, #c2685d 100%);
+            box-shadow: 0 2px 0 #ad4739;
+            color: #fff
+        }
+
+        .button-green:not([disabled]):focus,
+        .button-green:not([disabled]):hover {
+            background: #d67e73;
+            background: -webkit-gradient(linear, left top, left bottom, from(#d67e73), to(#c2685d));
+            background: linear-gradient(to bottom, #d67e73 0%, #c2685d 100%);
+            color: #fff
+        }
+
+        .button-green:not([disabled]):active {
+            background: #d67e73;
+            background: -webkit-gradient(linear, left top, left bottom, from(#d67e73), to(#c2685d));
+            background: linear-gradient(to bottom, #d67e73 0%, #c2685d 100%);
+            color: #fff
+        }
+
+        section {
+            overflow: hidden;
+            padding: 0 1em;
+            word-wrap: break-word
+        }
+
+        .section-wrapper {
+            max-width: 540px;
+            margin: 0 auto
+        }
+
+        footer {
+            font-size: .8em;
+            margin: 4em 1em;
+            text-align: center
+        }
+
+        footer ul {
+            list-style: none;
+            margin: .5em 0 0;
+            padding: 0;
+        }
+
+        footer li {
+            display: inline-block;
+            margin: 0 .4em;
+            cursor: pointer
+            
+        }
+
+        footer p {
+            margin: .5em 0;
+        }
+
+        .info-message {
+            border-radius: 4px;
+            background: #FAF3C0;
+            border: 1px solid #F2D600;
+            display: inline-block;
+            padding: .5em 1em
+        }
+
+        @media only screen and (min-width:650px) {
+            section {
+                padding: 2em 1em
+            }
+        }
+
+        @media only screen and (min-width:900px) {
+            html {
+                font-size: 20px
+            }
+
+            section {
+                padding: 4em 1em
+            }
+
+            .section-wrapper {
+                margin: 0 auto;
+                max-width: 1300px
+            }
+
+            .layout-grid-frame {
+                margin: 0 auto;
+                max-width: 890px;
+                position: relative
+            }
+
+            .layout-twothirds-center {
+                display: block;
+                max-width: 585px;
+                margin: 0 auto;
+                position: relative
+            }
+        }
+
+        .hidden {
+            display: none !important;
+            visibility: hidden
+        }
+       
+        .quick-switch {
+            margin: 0 auto;
+            max-width: 440px
+        }
+
+        .quick-switch h1 {
+            height: 100%;
+            color: #333;
+            font-size: 38px;
+            line-height: 48px;
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        .quick-switch .button-green {
+            border-radius: 10px
+        }
+
+        .quick-switch .button-green:not([disabled]) {
+            background: #d67e73
+        }
+
+        .quick-switch .button-green:not([disabled]):focus,
+        .quick-switch .button-green:not([disabled]):hover {
+            background: #c2685d
+        }
+
+        .quick-switch .button-green:not([disabled]):active {
+            background: #c2685d
+        }
+
+        .quick-switch .sign-up-container {
+            margin-top: 1.2em
+        }
+
+        .quick-switch input[type="email"],
+        .quick-switch input[type="password"],
+        .quick-switch input[type="button"] {
+            max-width: 440px;
+            width: 100%
+        }
+
+        .quick-switch #signup {
+            margin-bottom: 1.2em
+        }
+
+        #signup-password h1 {
+            margin-top: 0
+        }

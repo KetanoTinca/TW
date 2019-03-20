@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Web Application that eases the management of licence or master's degree thesis.">
+        <meta name="keywords" content="web application, faculty, thesis, licence, education">
+        <meta name="author" content="Birleanu Andrei-Cristian, Mihai Elena Sorina, Tinca Ketano-Leonard, Velicescu Laura">
+        <title>AcaTisM | Profile </title>
+        <link rel="stylesheet" href="../CSS/settings.css">
+    </head>
+    <body>
+        <header>
+            <nav id="header">
+                <a class="header-logo" aria-label="AcaTisM Home">AcaTisM</a>
+                <div class="header-back-button">
+                    <a class="header-btn" href="./view-profs.html" aria-label="Back to home">
+                        <img class="header-btn-icon" src="../img/home.png" alt="H">
+                    </a>
+                </div>
+                <div class="header-boards-button">
+                    <a class="header-btn header-boards" href="./progress.html" aria-label="Boards">
+    
+                        <img class="header-btn-icon" src="../img/progres.png" alt="P">
+    
+                        <span class="header-btn-text">Progress</span>
+    
+                    </a>
+                </div>
+                <div>
+    
+                    <a class="header-btn open-search-btn" href="./search.html" title="Search for projects">
+                        <img class="header-btn-icon" src="../img/search.png" alt="S">
+                    </a>
+                    <div class="header-search">
+                        <input class="header-search-input focus" type="text">
+                        <span class="header-search-icon icon-lg icon-search light">
+                            <img class="header-btn-icon" src="../img/search.png" alt="S">
+    
+                        </span>
+    
+                    </div>
+                </div>
+                <div class="header-user">
+                    <a class="header-btn" href="./create.html" title="Create a project">
+                        <img class="header-btn-icon" src="../img/plus.png" alt="+">
+                    </a>
+                    <a class="header-btn header-info" aria-label="Open info menu">
+                        <img class="header-btn-icon" src="../img/info.png" alt="i">
+                    </a>
+                    <a class="header-btn header-notifications other-notifications" href="#" aria-label="Notifications">
+                            <img class="header-btn-icon" src="../img/notification.png" alt="N">
+                    </a>
+                    <a class="header-btn header-avatar js-open-header-member-menu" href="#" aria-label="Open Member Menu">
+    
+                        <span class="member-initials" title="Tinca Ketano (tincaketano)">TK</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <section id ="description">
+            <div class="containerdescription" >
+                <div class="container">
+                    <button class="profile_shape" onclick="location.href='change_photo.html'">
+                        <img  class="profile_pic" src="../img/profile.png" alt="Profile" >
+                        <p class="change_profile">Change</p>
+                    </button>
+                    <div class="container">
+                        <div class="username">
+                            <h1>NumeProfesorPrenumeProfesor</h1>
+                            <p >nume.prenume@info.uaic.ro</p>
+                        </div>
+                        <button class="edit_profile" onclick="location.href='settings.html'">
+                                <img  class="edit_img" src="../img/edit.png" alt="edit" >
+                                <p style="float:right;margin:5px 5px 0 0;">Edit profile</p>
+                        </button>
+                    </div>
+                </div>
+               
+                
+            </div>
+            
+            <div class="container">
+                <nav>
+                    <ul>
+                        <li  ><a href="user.html">Timeline</a></li>
+                        <li><a href="cards.html">View Students</a></li>
+                        <li style="background:white;"><a href="settings.html">Settings</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <section id="settings">
+            <div class="container">
+                <div class="box">
+                    <h1>My Account Settings</h1>
+                </div>
+                <div class="box">
+                    <h1 style="border-bottom: 2px solid rgb(171, 213, 240);">Password Change</h1>
+
+                    <form class="password">
+                        <div class="grid-container">
+                            <div class="grid-item">
+                                <label for="Oldpass">Old password</label>
+                                <br>
+                                <input id="Oldpass" type="password" value="123456789041241">
+                            </div>
+                            <div class="grid-item">
+                                <label for="newpass1">New password*</label>
+                                <br>
+                                <input id="newpass1" type="password" placeholder="New password...">
+                            </div>
+                            <div class="grid-item">
+                                <label for="newpass2">Confirm password*</label>
+                                <br>
+                                <input id="newpass2" type="password" placeholder="Confirm password...">
+                            </div>  
+                                     
+                        </div>
+                       
+                        
+                        
+                        <input type="submit" value="Change Password">
+                    </form>
+
+                </div>
+                <div class="box">
+                    <h1 style="border-bottom: 2px solid rgb(171, 213, 240);">  Basic Profile</h1>
+                    <div class="twoflex">
+                        <div class="photoside">
+                                <button class="photo-shape" onclick="location.href='#'">
+                                        <img  class="profile_pic" src="../img/profile.png" alt="Profile" >
+                                        <p class="change_profile">Change</p>
+                                    </button>
+                            <button type="button" class="browse" >Browse...</button>
+                        </div>
+                    
+                           <form class="otherinfo">
+                                <label for="Adress">Adress</label>
+                               <input id="Adress" type="text" placeholder="Your address...">
+                               <label for="Street">Street</label>
+                               <input id="Street" type="text" placeholder="Your street...">
+                               <label for="City">City</label>
+                               <input id= "City" type="text" placeholder="Your city...">
+                               <label for="country">Country</label>
+                                <select id="country" name="country">
+                                <option value="australia">Australia</option>
+                                <option value="canada">Canada</option>
+                                <option value="usa">USA</option>
+                                <option value="australia">Romania</option>
+                                <option value="canada">Germany</option>
+                                <option value="usa">France</option>
+                                <option value="australia">Hungary</option>
+                                <option value="canada">Spain</option>
+                                <option value="usa">Italy</option>
+                                </select>
+                                <label for="zip">Zip Code</label>
+                               <input id="zip" type="tel" placeholder="Your zip...">
+                               <label for="phone">Phone</label>
+                               <input id="phone" type="tel" placeholder="Your mobilephone...">
+                               <label for="fname">First Name</label>
+                               <input id="fname" type="text" placeholder="First Name...">
+                               <label for="sname">Second Name</label>
+                               <input id="sname" type="text" placeholder="Second Name...">
+                               <label for="email">Email</label>
+                               <input id= "email" type="text" placeholder="Your Email...">
+                               <input type="submit" value="Save">
+                           </form> 
+                    </div>
+                </div>
+            </div>
+
+            
+        </section>
+          
+       
+
+        <footer>
+            <p>AcaTisM App, Copyright &copy; 2019</p>
+        </footer>
+    </body>
+</html>
