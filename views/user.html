@@ -8,19 +8,36 @@
         <meta name="author" content="Birleanu Andrei-Cristian, Mihai Elena Sorina, Tinca Ketano-Leonard, Velicescu Laura">
         <title>AcaTisM | Profile </title>
         <link rel="stylesheet" href="../CSS/style_profile.css">
+        <script>
+            function myFunction() {
+              var dots = document.getElementById("dots");
+              var moreText = document.getElementById("hidden-list");
+              var btnText = document.getElementById("show-more");
+            
+              if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                
+                moreText.style.display = "none";
+              } else {
+                dots.style.display = "none";
+                
+                moreText.style.display = "block";
+              }
+            }
+        </script>
         
     </head>
     <body>
         <header>
             <nav id="header">
-                <a class="header-logo" aria-label="AcaTisM Home">AcaTisM</a>
+               <a class="header-logo" onclick="location.href='./view-profs.html'"  aria-label="AcaTisM Home">AcaTisM</a>
                 <div class="header-back-button">
                     <a class="header-btn" href="./view-profs.html" aria-label="Back to home">
                         <img class="header-btn-icon" src="../img/home.png" alt="H">
                     </a>
                 </div>
                 <div class="header-boards-button">
-                    <a class="header-btn header-boards" href="./boards.html" aria-label="Boards">
+                    <a class="header-btn header-boards" href="./progress.html" aria-label="Boards">
     
                         <img class="header-btn-icon" src="../img/progres.png" alt="P">
     
@@ -43,7 +60,7 @@
                     </div>
                 </div>
                 <div class="header-user">
-                    <a class="header-btn" href="./create.html" title="Create a project">
+                    <a class="header-btn" href="./progress.html " title="Create a project">
                         <img class="header-btn-icon" src="../img/plus.png" alt="+">
                     </a>
                     <a class="header-btn header-info" aria-label="Open info menu">
@@ -102,28 +119,28 @@
                 </div>
                 <ul class="active">
                     <li><p><a href="#">Andrei Birleanu</a> moved <span>Intefata aplicatie</span> from <b>In Lucru</b> to <b>Facute</b></p>
-                    <p><time>Monday, 10 Mar 2019, 2:36 PM</time> in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <p> Monday, 10 Mar 2019, 2:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
                     <li><p><a href="#">Laura Velicescu</a> moved <span>Bug baza de date</span> from <b>Testare</b> to <b>TO DO LIST</b></p>
-                    <p><time>Monday, 10 Mar 2019, 1:36 PM</time> in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <p> Monday, 10 Mar 2019, 1:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
                     <li><p><a href="#">Andrei Birleanu</a> moved <span>Intefata aplicatie</span> from <b>TO DO LIST</b> to <b>In Lucru</b></p>
-                    <p><time>Monday, 6 Mar 2019, 4:20 AM</time> in <a href="$"><b>Licenta 2019</b></a></p></li>    
+                    <p> Monday, 6 Mar 2019, 4:20 AM  in <a href="$"><b>Licenta 2019</b></a></p></li>    
                     <li><p><a href="#">Tinca Ketano</a> moved <span>Alegere proiect</span> from <b>In Lucru</b> to <b>Facute</b></p>
-                    <p><time>Monday, 1 Mar 2019, 6:36 PM</time> in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <p> Monday, 1 Mar 2019, 6:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
                     <li><p><a href="#">Laura Velicescu</a> moved <span>Conectare baza de date</span> from <b>In Lucru</b> to <b>Facute</b></p>
-                    <p><time>Monday, 1 Mar 2019, 2:36 PM</time> in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <p> Monday, 1 Mar 2019, 2:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
                 </ul>
                 <button onclick="myFunction()" id="show-more">Load more activity <span id="dots">...</span></button>
                 <ul id="hidden-list">
                     <li><p><a href="#">Andrei Birleanu</a> moved <span>Intefata aplicatie</span> from <b>In Lucru</b> to <b>Facute</b></p>
-                    <p><time>Monday, 10 Mar 2019, 2:36 PM</time> in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <p> Monday, 10 Mar 2019, 2:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
                     <li><p><a href="#">Laura Velicescu</a> moved <span>Bug baza de date</span> from <b>Testare</b> to <b>TO DO LIST</b></p>
-                    <p><time>Monday, 10 Mar 2019, 1:36 PM</time> in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <p> Monday, 10 Mar 2019, 1:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
                     <li><p><a href="#">Andrei Birleanu</a> moved <span>Intefata aplicatie</span> from <b>TO DO LIST</b> to <b>In Lucru</b></p>
-                    <p><time>Monday, 6 Mar 2019, 4:20 AM</time> in <a href="$"><b>Licenta 2019</b></a></p></li>    
+                    <p> Monday, 6 Mar 2019, 4:20 AM  in <a href="$"><b>Licenta 2019</b></a></p></li>    
                     <li><p><a href="#">Tinca Ketano</a> moved <span>Alegere proiect</span> from <b>In Lucru</b> to <b>Facute</b></p>
-                    <p><time>Monday, 1 Mar 2019, 6:36 PM</time> in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <p> Monday, 1 Mar 2019, 6:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
                     <li><p><a href="#">Laura Velicescu</a> moved <span>Conectare baza de date</span> from <b>In Lucru</b> to <b>Facute</b></p>
-                    <p><time>Monday, 1 Mar 2019, 2:36 PM</time> in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <p> Monday, 1 Mar 2019, 2:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
                 </ul>
            </div>
        </section>
@@ -132,21 +149,5 @@
             <p>AcaTisM App, Copyright &copy; 2019</p>
         </footer>
     </body>
-    <script>
-        function myFunction() {
-          var dots = document.getElementById("dots");
-          var moreText = document.getElementById("hidden-list");
-          var btnText = document.getElementById("show-more");
-        
-          if (dots.style.display === "none") {
-            dots.style.display = "inline";
-            
-            moreText.style.display = "none";
-          } else {
-            dots.style.display = "none";
-            
-            moreText.style.display = "block";
-          }
-        }
-    </script>
+   
 </html>

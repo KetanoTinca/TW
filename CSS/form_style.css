@@ -152,7 +152,7 @@ input[type=radio], select{
         display: inline-block;
         margin-right: 15px;
         cursor: pointer;
-    -webkit-appearance: checkbox
+   
     
 }
 
