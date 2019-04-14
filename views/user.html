@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Web Application that eases the management of licence or master's degree thesis.">
+        <meta name="keywords" content="web application, faculty, thesis, licence, education">
+        <meta name="author" content="Birleanu Andrei-Cristian, Mihai Elena Sorina, Tinca Ketano-Leonard, Velicescu Laura">
+        <title>AcaTisM | Profile </title>
+        <link rel="stylesheet" href="../CSS/style_profile.css">
+        <script>
+            function myFunction() {
+              var dots = document.getElementById("dots");
+              var moreText = document.getElementById("hidden-list");
+              var btnText = document.getElementById("show-more");
+            
+              if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                
+                moreText.style.display = "none";
+              } else {
+                dots.style.display = "none";
+                
+                moreText.style.display = "block";
+              }
+            }
+        </script>
+        
+    </head>
+    <body>
+        <header>
+            <nav id="header">
+               <a class="header-logo" onclick="location.href='./view-profs.html'"  aria-label="AcaTisM Home">AcaTisM</a>
+                <div class="header-back-button">
+                    <a class="header-btn" href="./view-profs.html" aria-label="Back to home">
+                        <img class="header-btn-icon" src="../img/home.png" alt="H">
+                    </a>
+                </div>
+                <div class="header-boards-button">
+                    <a class="header-btn header-boards" href="./progress.html" aria-label="Boards">
+    
+                        <img class="header-btn-icon" src="../img/progres.png" alt="P">
+    
+                        <span class="header-btn-text">Progress</span>
+    
+                    </a>
+                </div>
+                <div>
+    
+                    <a class="header-btn open-search-btn" href="./search.html" title="Search for projects">
+                        <img class="header-btn-icon" src="../img/search.png" alt="S">
+                    </a>
+                    <div class="header-search">
+                        <input class="header-search-input focus" type="text">
+                        <span class="header-search-icon icon-lg icon-search light">
+                            <img class="header-btn-icon" src="../img/search.png" alt="S">
+    
+                        </span>
+    
+                    </div>
+                </div>
+                <div class="header-user">
+                    <a class="header-btn" href="./progress.html " title="Create a project">
+                        <img class="header-btn-icon" src="../img/plus.png" alt="+">
+                    </a>
+                    <a class="header-btn header-info" aria-label="Open info menu">
+                        <img class="header-btn-icon" src="../img/info.png" alt="i">
+                    </a>
+                    <a class="header-btn header-notifications other-notifications" href="#" aria-label="Notifications">
+                            <img class="header-btn-icon" src="../img/notification.png" alt="N">
+                    </a>
+                    <a class="header-btn header-avatar js-open-header-member-menu" href="user.html" aria-label="Open Member Menu">
+    
+                        <span class="member-initials" title="Tinca Ketano (tincaketano)">TK</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        
+        <section id ="description">
+            <div class="containerdescription" >
+                <div class="container">
+                    <button class="profile_shape" onclick="location.href='change_photo.html'">
+                        <img  class="profile_pic" src="../img/profile.png"  alt="profile">
+                        <p class="change_profile">Change</p>
+                    </button>
+                    <div class="container">
+                        <div class="username">
+                            <h1>NumeProfesorPrenumeProfesor</h1>
+                            <p >nume.prenume@info.uaic.ro</p>
+                        </div>
+                        <button class="edit_profile" onclick="location.href='settings.html'">
+                                <img  class="edit_img" src="../img/edit.png" alt="Edit" >
+                                <p style="float:right;margin:5px 5px 0 0;">Edit profile</p>
+                        </button>
+                    </div>
+                </div>
+               
+                
+            </div>
+            
+            <div class="container">
+                <nav>
+                    <ul>
+                        <li  style="background:white;"><a href="user.html">Timeline</a></li>
+                        <li><a href="cards.html">View Students</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    
+       <section id="activity"  >
+           <div class="container" style="background-color: white;">
+                <div class="text" >
+                    <h1>Timeline</h1>
+                    <p>Check what is new in your students projects.Here you can see what they did and when, according with our boards</p>
+                </div>
+                <ul class="active">
+                    <li><p><a href="#">Andrei Birleanu</a> moved <span>Intefata aplicatie</span> from <b>In Lucru</b> to <b>Facute</b></p>
+                    <p> Monday, 10 Mar 2019, 2:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <li><p><a href="#">Laura Velicescu</a> moved <span>Bug baza de date</span> from <b>Testare</b> to <b>TO DO LIST</b></p>
+                    <p> Monday, 10 Mar 2019, 1:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <li><p><a href="#">Andrei Birleanu</a> moved <span>Intefata aplicatie</span> from <b>TO DO LIST</b> to <b>In Lucru</b></p>
+                    <p> Monday, 6 Mar 2019, 4:20 AM  in <a href="$"><b>Licenta 2019</b></a></p></li>    
+                    <li><p><a href="#">Tinca Ketano</a> moved <span>Alegere proiect</span> from <b>In Lucru</b> to <b>Facute</b></p>
+                    <p> Monday, 1 Mar 2019, 6:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <li><p><a href="#">Laura Velicescu</a> moved <span>Conectare baza de date</span> from <b>In Lucru</b> to <b>Facute</b></p>
+                    <p> Monday, 1 Mar 2019, 2:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
+                </ul>
+                <button onclick="myFunction()" id="show-more">Load more activity <span id="dots">...</span></button>
+                <ul id="hidden-list">
+                    <li><p><a href="#">Andrei Birleanu</a> moved <span>Intefata aplicatie</span> from <b>In Lucru</b> to <b>Facute</b></p>
+                    <p> Monday, 10 Mar 2019, 2:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <li><p><a href="#">Laura Velicescu</a> moved <span>Bug baza de date</span> from <b>Testare</b> to <b>TO DO LIST</b></p>
+                    <p> Monday, 10 Mar 2019, 1:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <li><p><a href="#">Andrei Birleanu</a> moved <span>Intefata aplicatie</span> from <b>TO DO LIST</b> to <b>In Lucru</b></p>
+                    <p> Monday, 6 Mar 2019, 4:20 AM  in <a href="$"><b>Licenta 2019</b></a></p></li>    
+                    <li><p><a href="#">Tinca Ketano</a> moved <span>Alegere proiect</span> from <b>In Lucru</b> to <b>Facute</b></p>
+                    <p> Monday, 1 Mar 2019, 6:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
+                    <li><p><a href="#">Laura Velicescu</a> moved <span>Conectare baza de date</span> from <b>In Lucru</b> to <b>Facute</b></p>
+                    <p> Monday, 1 Mar 2019, 2:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
+                </ul>
+           </div>
+       </section>
+
+        <footer>
+            <p>AcaTisM App, Copyright &copy; 2019</p>
+        </footer>
+    </body>
+   
+</html>
