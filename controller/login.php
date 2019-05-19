@@ -1,13 +1,16 @@
 <?php
       
 include_once "../classes/Database.php";
+
+
 function redirect($url, $statusCode = 303)
 {
    header('Location: ' . $url, true, $statusCode);
    die();
 }
         if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username'])){
-          // Redirect('../views/view-profs.php', false);
+            session_destroy();
+           Redirect('../views/view-profs.php', false);
             echo "sunt in sesiune";
         }else{
             if(!empty($_POST['username']) && !empty($_POST['password'])){
@@ -18,7 +21,7 @@ function redirect($url, $statusCode = 303)
                     Redirect('../views/view-profs.php', false);
                     echo "m-am logat";
                 }else{
-                    echo "wrong";
+                    Redirect('../views/login.php?status=wrong', false);
                 }
             }
         }

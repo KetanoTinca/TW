@@ -23,123 +23,158 @@
 		methods
 		*/
 		public function accountLogin()
-    	{
-        	$sql = "SELECT *
+        {
+            $sql = "SELECT *
             	    FROM user
                 	WHERE username=:user
                 	AND pass=:pass
                        LIMIT 1";
-           
-            echo $sql;        
-        	try
-        	{
-            	$stmt = $this->_db->prepare($sql);
-            	$stmt->bindParam(':user', $_POST['username'], PDO::PARAM_STR);
+
+            echo $sql;
+            try {
+                $stmt = $this->_db->prepare($sql);
+                $stmt->bindParam(':user', $_POST['username'], PDO::PARAM_STR);
                 $stmt->bindParam(':pass', $_POST['password'], PDO::PARAM_STR);
-                
-            	$stmt->execute();
-            	if($stmt->rowCount()==1)
-            	{
-               		$_SESSION['Username'] = htmlentities($_POST['username'], ENT_QUOTES);
-               		$_SESSION['LoggedIn'] = 1;
-                	return TRUE;
-            	}
-            	else
-            	{
-                	return FALSE;
-            	}
-        	}
-        	catch(PDOException $e)
-        	{
+
+                $stmt->execute();
+                if ($stmt->rowCount() == 1) {
+                    $_SESSION['Username'] = htmlentities($_POST['username'], ENT_QUOTES);
+                    $_SESSION['LoggedIn'] = 1;
+                    return TRUE;
+                } else {
+                    return FALSE;
+                }
+            } catch (PDOException $e) {
                 echo $e->getMessage();
-            	return FALSE;
-        	}
-    	}
-        /*
-        -------------
-        
+                return FALSE;
+            }
+        }
+
+
         public function createAccount()
         {
-            $username = trim($_POST['fname']);
+            $firstName = trim($_POST['firstName']);
+            $lastName = trim($_POST['lastName']);
+            $username = trim($_POST['userName']);
             $email = trim($_POST['email']);
-            $pass = trim($_POST['pass']);
+            $pass = trim($_POST['password']);
+            if($_POST['userType'] == "student"){
+                $userType = 1;
+            }else{
+                $userType = 0;
+            }
+            echo $userType;
+            echo "<br>";
+
             $sql = "SELECT COUNT(USERNAME) AS theCount
-                    FROM users
-                    WHERE USER_NAME=:username
-                    and EMAIL=:email
-                    and PASSWORD=:password";
+                    FROM user
+                    WHERE username=:username;";
+            echo "Status0<br>";
             try
             {
                 if($stmt = $this->_db->prepare($sql))
                 {
                     $stmt->bindParam(":username", $username, PDO::PARAM_STR);
-                    $stmt->bindParam(":email", $email, PDO::PARAM_STR);
-                    $stmt->bindParam(":password", $pass, PDO::PARAM_STR);
                     $stmt->execute();
                     $row = $stmt->fetch();
                     if($row['theCount']!=0)
                     {
-                        return "<h2> Error </h2>"
-                            . "<p> Sorry, those credentials are already in use. "
-                            . "Please try again. </p>";
+                        return 0;
                     }
                     $stmt->closeCursor();
                 }
- 
-                $sql = "INSERT INTO users(USER_NAME, EMAIL, PASSWORD)
-                        VALUES(:username, :email, :password)";
-                if($stmt = $this->_db->prepare($sql)) 
-                {
-                    $stmt->bindParam(":username", $username, PDO::PARAM_STR);
-                    $stmt->bindParam(":email", $email, PDO::PARAM_STR);
-                    $stmt->bindParam(":password", $pass, PDO::PARAM_STR);
-                    $stmt->execute();
-                    $stmt->closeCursor();
-                    
-                    return "<h2> Success! </h2>"
-                            . "<p> Your account was successfully "
-                            . "created with the username <strong>$username</strong>."
-                            . " Check your email!";
+                echo "status1<br>";
+                $status=0;
+
+                $sql = "INSERT INTO user VALUES (NULL, :username, :password, :userType, :firstName, :lastName, :email , null, null )";
+                //$sql = "INSERT INTO user VALUES (NULL,'" . $username . "','" . $pass . "'," . $userType . ",'" . $firstName . "','" . $lastName . "','" . $email . "')";
+                echo $sql;
+                echo "<br>";
+                if($userType == 1){
+                    $sql2 = "INSERT INTO student (user_fk) VALUES ((SELECT id FROM user WHERE username like :username AND pass like :password))";
+                    //$sql2 = "INSERT INTO student (user_fk) VALUES (select id from user where username like '" . $username . "' and pass like '" . $pass . "')";
                 }
                 else
                 {
-                    return "<h2> Error </h2><p> Couldn't insert the "
-                        . "user information into the database. </p>";
+                    $sql2 = "INSERT INTO teacher (user_fk) VALUES ((SELECT id FROM user WHERE username like :username AND pass like :password))";
+
+                    //$sql2 = "INSERT INTO teacher (user_fk) VALUES (select id from user where username like '" . $username . "' and pass like '" . $pass . "')";
                 }
+                echo $sql . "<br> " . $sql2;
+                echo "<br>";
+                if($stmt = $this->_db->prepare($sql))
+                {
+                    $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+                    $stmt->bindParam(":firstName", $firstName, PDO::PARAM_STR);
+                    $stmt->bindParam(":lastName", $lastName, PDO::PARAM_STR);
+                    $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+                    $stmt->bindParam(":password", $pass, PDO::PARAM_STR);
+                    $stmt->bindParam(":userType", $userType, PDO::PARAM_STR);
+                    $stmt->execute();
+                    $stmt->closeCursor();
+                    $status=$status+1;
+
+                }
+                else
+                {
+                    return 0;
+                }
+                $data = $stmt->fetchAll();
+                echo $data . "<Br>";
+                if($stmt = $this->_db->prepare($sql2))
+                {
+                    $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+                    $stmt->bindParam(":password", $pass, PDO::PARAM_STR);
+                    $stmt->execute();
+                    $stmt->closeCursor();
+                    $status=$status+1;
+
+                }
+                else
+                {
+                    return 0;
+                }
+
+
+               if($status == 2){
+                   return 1;
+               } else{
+                   return 0;
+               }
             }
             catch(PDOException $e)
             {
                 return $e->getMessage();
             }
         }
-        /*
-        -------------
+
+
         
-        public function forgotPassword()
-        {
-            $username = trim($_POST['name']);
-            $email = trim($_POST['email']);
-             $sql = "SELECT PASSWORD AS theCount
-                    FROM users
-                    WHERE USER_NAME=:username
-                    and EMAIL=:email";
-            if($stmt = $this->_db->prepare($sql))
-            {
-                $stmt->bindParam(":username", $username, PDO::PARAM_STR);
-                $stmt->bindParam(":email", $email, PDO::PARAM_STR);
-                $stmt->execute();
-                $row = $stmt->fetch();
-                $stmt->closeCursor();
-                if($row['theCount']!=NULL)
-                {
-                    return $row['theCount'];
-                }
-                else
-                {
-                    return "<p>Couldn't find your account, try again.</p>";
-                }
-            }
-        }
-        */
+//        public function forgotPassword()
+//        {
+//            $username = trim($_POST['name']);
+//            $email = trim($_POST['email']);
+//             $sql = "SELECT PASSWORD AS theCount
+//                    FROM users
+//                    WHERE USER_NAME=:username
+//                    and EMAIL=:email";
+//            if($stmt = $this->_db->prepare($sql))
+//            {
+//                $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+//                $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+//                $stmt->execute();
+//                $row = $stmt->fetch();
+//                $stmt->closeCursor();
+//                if($row['theCount']!=NULL)
+//                {
+//                    return $row['theCount'];
+//                }
+//                else
+//                {
+//                    return "<p>Couldn't find your account, try again.</p>";
+//                }
+//            }
+//        }
+//        */
 	}
 ?>

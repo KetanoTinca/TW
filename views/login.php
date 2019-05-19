@@ -25,6 +25,14 @@ include_once "../classes/Database.php";
                     <h1>Sign In</h1>
                     <div class="sign-up-container">
                     <form method = "post" action = "../controller/login.php">
+                        <?php if(isset($_GET['status']) && $_GET['status'] == 'wrong'  ){
+                            echo "<p>User sau pass gresite</p>";
+                        }
+                        if (isset($_GET['status']) && $_GET['status'] == 'confirm') {
+                             echo "<p>Trebuie sa confirmati emailul</p>";
+                            }  ?>
+
+
                         <label for="email">Username</label>
                         <input type="text" name="username" id="username" value="">
                         <label for="password">Password</label>
