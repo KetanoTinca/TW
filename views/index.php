@@ -21,8 +21,8 @@
             </div>
             <nav>
  
-                <button class="small_button_login" onclick="location.href='login.html'">Login</button>
-                <button class="small_button_signup" onclick="location.href='signup.html'">Sign-Up</button>
+                <button class="small_button_login" onclick="location.href='login.php'">Login</button>
+                <button class="small_button_signup" onclick="location.href='signup.php'">Sign-Up</button>
  
             </nav>
         </div>
