@@ -26,7 +26,7 @@ include_once "../classes/Database.php";
                     <div class="sign-up-container">
                     <form method = "post" action = "../controller/login.php">
                         <label for="email">Username</label>
-                        <input type="text" name="username" id="username" value="">
+                        <input type="user" name="username" id="username" value="">
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password" tabindex="0" placeholder="e.g., ••••••••••••">
                         <input id="signup" tabindex="0" type="submit" class="button button-green" value="Sign In">

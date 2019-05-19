@@ -85,7 +85,7 @@
         }
 
         
-        input[type="email"],
+        input[type="user"],
         input[type="password"]{
             background: #EDEFF0;
             border-radius: 4px;
@@ -98,14 +98,14 @@
         }
 
         
-        input[type="email"]:hover,
+        input[type="user"]:hover,
         input[type="password"]:hover
         {
             border-color: #B6BBBF
         }
 
         
-        input[type="email"]:focus,
+        input[type="user"]:focus,
         input[type="password"]:focus
          {
             border-color: #A5ACB0;
@@ -271,7 +271,7 @@
             margin-top: 1.2em
         }
 
-        .quick-switch input[type="email"],
+        .quick-switch input[type="user"],
         .quick-switch input[type="password"],
         .quick-switch input[type="button"] {
             max-width: 440px;
