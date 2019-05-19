@@ -13,7 +13,15 @@
 
 <body>
     <div id="surface">
-    <?php include 'navbar.php';?>
+    <?php include 'navbar.php';
+    include '../classes/Database.php';
+    include '../controller/session.php';
+    if(isset($_SESSION['userType'])){
+
+        echo "<h1> Hello " . $_SESSION['userType'] . "</h1>";
+    }
+
+    ?>
 
         <section id="teacher_list">
             <div id="description">

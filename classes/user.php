@@ -24,7 +24,7 @@
 		*/
 		public function accountLogin()
         {
-            $sql = "SELECT *
+            $sql = "SELECT userType
             	    FROM user
                 	WHERE username=:user
                 	AND pass=:pass
@@ -40,6 +40,12 @@
                 if ($stmt->rowCount() == 1) {
                     $_SESSION['Username'] = htmlentities($_POST['username'], ENT_QUOTES);
                     $_SESSION['LoggedIn'] = 1;
+                    $result = $stmt->fetch();
+                    if($result[0] == 1){
+                        $_SESSION['userType'] = 'student';
+                    }else{
+                        $_SESSION['userType'] = 'teacher';
+                    }
                     return TRUE;
                 } else {
                     return FALSE;
