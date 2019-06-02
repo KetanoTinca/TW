@@ -55,7 +55,7 @@
 
           <label>Academic Year</label>
           <?php
-          echo "<select id=\"userType\" name=\"userType\">";
+          echo "<select id=\"academicYear\" name=\"academicYear\">";
           $currentYear = date("Y");
           $count = 6;
           $string = ($currentYear-1) . "-" . $currentYear;
