@@ -25,6 +25,7 @@
               }
             }
         </script>
+
         
     </head>
     <body>
@@ -37,7 +38,50 @@
                 
            
     
+
+
+
+
+
        <section id="activity"  >
+
+
+      <form method="post" action="../controller/addThemes.php" >
+
+          <label>Theme Title</label>
+          <input type="text" name="themeTitle" id ="themeTitle">
+          <label>Theme Description</label>
+          <textarea id="themeDescription" name="themeDescription" required placeholder="Describe your Theme" rows="5" cols="60"></textarea>
+
+          <label>Academic Year</label>
+          <?php
+          echo "<select id=\"userType\" name=\"userType\">";
+          $currentYear = date("Y");
+          $count = 6;
+          $string = ($currentYear-1) . "-" . $currentYear;
+          while($count){
+                echo "<option value=\"$string\">$string</option>";
+                $currentYear=$currentYear-1;
+                $string = ($currentYear-1) . "-" . $currentYear;
+                $count=$count-1;
+
+            }
+
+          ?>
+
+
+          </select>
+
+          <input id="addTheme" tabindex="0" type="submit" class="button button-green" value="Add this Theme">
+
+
+
+
+
+      </form>
+
+
+
            <div class="container" style="background-color: white;">
                 <div class="text" >
                     <h1>Timeline</h1>

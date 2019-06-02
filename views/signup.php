@@ -21,13 +21,34 @@
                         <h1>Create an Account</h1> <span class="sign-in-account">or <a href="login.html">sign in to your
                                 account</a></span>
                         <div class="sign-up-container">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" id="name" value="" autofocus>
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email" value="">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" id="password" tabindex="0" placeholder="e.g., ••••••••••••">
-                            <input id="signup" tabindex="0" type="button" class="button button-green" value="Create New Account" onclick="location.href='./login.html'">
+                            <?php
+                            if(isset($_GET['status']) && $_GET['status']=='wrong1'){
+                                echo "<p>Smth went wrong motherfucker</p>";
+                            }
+                            ?>
+
+                            <form method="post" action="../controller/signup.php">
+                                <label for="firstName">First Name</label>
+                                <input type="text" name="firstName" id="firstName" autofocus>
+                                <label for="lastName">Last Name</label>
+                                <input type="text" name="lastName" id="lastName">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email">
+                                <label for="userName">Username</label>
+                                <input type="text" name="userName" id="userName">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" tabindex="0" placeholder="e.g., ••••••••••••">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" name="confirmPassword" id="confirmPassword" tabindex="0" placeholder="e.g., ••••••••••••">
+                                <label for="userType">User Type</label>
+                                <select id="userType" name="userType">
+                                    <option value="teacher">Teacher</option>
+                                    <option value="student">Student</option>
+                                </select>
+                                <input id="signup" tabindex="0" type="submit" class="button button-green" value="Sign Up">
+
+                            </form>
+
                         </div>
                     </div>
                 </div>

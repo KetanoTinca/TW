@@ -21,9 +21,27 @@
             <div class="container">
                 <nav>
                     <ul>
-                        <li  style="background:white;"><a href="user.php">Timeline</a></li>
-                        <li><a href="cards.php">View Students</a></li>
-                        <li><a href="settings.php">Settings</a></li>
+                        <?php
+                            if (basename($_SERVER['PHP_SELF']) == 'user.php'){
+                                echo "<li  style=\"background:white;\"><a href=\"user.php\">Your Projects</a></li>";
+                                echo "<li><a href=\"cards.php\">View Students</a></li>
+                                      <li><a href=\"settings.php\">Settings</a></li>";
+                            }else{
+                                if( basename($_SERVER['PHP_SELF'])== 'cards.php'){
+                                    echo "<li  ><a href=\"user.php\">Your Projects</a></li>";
+                                    echo "<li style=\"background:white;\"><a href=\"cards.php\">View Students</a></li>
+                                          <li><a href=\"settings.php\">Settings</a></li>";
+                                }else{
+                                    if( basename($_SERVER['PHP_SELF'])=='settings.php'){
+                                        echo "<li  ><a href=\"user.php\">Your Projects</a></li>";
+                                        echo "<li ><a href=\"cards.php\">View Students</a></li>
+                                              <li style=\"background:white;\"><a href=\"settings.php\">Settings</a></li>";
+                                    }
+                                }
+                            }
+                        ?>
+
+
                     </ul>
                 </nav>
             </div>
