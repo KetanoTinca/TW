@@ -9,10 +9,7 @@ function redirect($url, $statusCode = 303)
    die();
 }
         if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username'])){
-<<<<<<< HEAD
-=======
            // session_destroy();
->>>>>>> 51ba4768c199b3695f370e344f13b47595474ba8
            Redirect('../views/view-profs.php', false);
             echo "sunt in sesiune";
         }else{

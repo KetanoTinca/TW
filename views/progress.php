@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -10,64 +12,110 @@
 <body>
         <div class="ui">
         <?php include 'navbar.php';?>
+
                 <nav class="navbar board">Arduino -  Vîrlan Cosmin</nav>
                 <div class="lists">
                     <div class="list">
                         <header>To Do</header>
                         <ul>
-                            <li>Get The Parts for the project</li>
-                            <li>Make the project documentation</li>
+                        <?php
+if( isset($_GET['submit']) )
+{
+    if(isset($_GET['todo']) && $_GET['todo'] != ''){
+    $val1 = htmlentities($_GET['todo']);
+    include_once "../classes/board.php";
+    include_once "../classes/Database.php";
+      $board = new Board($db);
+      $board->postToDo($val1); 
+    }
+    if(isset($_GET['inprogress']) && $_GET['inprogress'] != ''){
+        $val1 = htmlentities($_GET['inprogress']);
+        include_once "../classes/board.php";
+        include_once "../classes/Database.php";
+          $board = new Board($db);
+          $board->postInProgress($val1); 
+        }
+        if(isset($_GET['feedback']) && $_GET['feedback'] != ''){
+            $val1 = htmlentities($_GET['feedback']);
+            include_once "../classes/board.php";
+            include_once "../classes/Database.php";
+              $board = new Board($db);
+              $board->postFeedBack($val1); 
+            }
+
+            if(isset($_GET['done']) && $_GET['done'] != ''){
+                $val1 = htmlentities($_GET['done']);
+                include_once "../classes/board.php";
+                include_once "../classes/Database.php";
+                  $board = new Board($db);
+                  $board->postDone($val1); 
+                }
+       header("Location: progress.php", true, 301);
+
+}
+?>
+                      <?php  include_once "../classes/board.php";
+                      include_once "../classes/Database.php";
+                        $board = new Board($db);
+                     echo $board->getToDo();
+                        ?>
                         </ul>
                         <footer>
-                            <input type="text" class="progress-input" placeholder="Add a card...">
-                            <button class="progress-add">Add</button>
+                            <form action="" method="get">
+                            <input type="text" class="progress-input" name='todo' id="todo" placeholder="Add a card...">
+                            <input type="submit" name="submit" class="progress-add">
+                            </form>
                         </footer>
                     </div>
                     <div class="list">
                         <header>In Progress</header>
                         <ul>
-                            
+                        <?php  include_once "../classes/board.php";
+                      include_once "../classes/Database.php";
+                        $board = new Board($db);
+                     echo $board->getInProgress();
+                        ?>
                         </ul>
                         <footer>
-                            <input type="text" class="progress-input" placeholder="Add a card...">
-                            <button class="progress-add">Add</button>
+
+                        <form action="" method="get">
+                            <input type="text" class="progress-input" name='inprogress' id="inprogress" placeholder="Add a card...">
+                            <input type="submit" name="submit" value="ADD" class="progress-add">
+                            </form>
                         </footer>
                     </div>
                     <div class="list">
                         <header>FeedBack</header>
                         <ul>
-                            <li>Task#3</li>
-                            <li>Task#4</li>
+                        <?php  include_once "../classes/board.php";
+                      include_once "../classes/Database.php";
+                        $board = new Board($db);
+                     echo $board->getFeedback();
+                        ?>
                         </ul>
                         <footer>
-                            <input type="text" class="progress-input" placeholder="Add a card...">
-                            <button class="progress-add">Add</button>
+                        <form action="" method="get">
+                            <input type="text" class="progress-input" name='feedback' id="feedback" placeholder="Add a card...">
+                            <input type="submit" name="submit" value="Add" class="progress-add">
+                            </form>
+                        </footer>
                         </footer>
                     </div>
                     <div class="list">
                         <header>Done</header>
                         <ul>
-                            <li>
-                                Task #5
-                            </li>
-                            <li>This is a longer task that's why it's so long</li>
-                            <li>Task#1 Done 1 week ago</li>
-                            <li>
-                                Hello from the done card.
-                            </li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis enim sit amet metus laoreet, ut condimentum</li>
-                            <li>Lorem ipsum dolor sit amet</li>
-                            <li>Lorem ipsum dolor sit amet</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis enim sit amet</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis enim sit amet metus laoreet, ut condimentum</li>
-                            <li>Lorem ipsum dolor sit amet</li>
-                            <li>Lorem ipsum dolor sit amet</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis enim sit amet</li>
-                            <li>Lorem ipsum dolor sit amet</li>
+                        <?php  include_once "../classes/board.php";
+                         include_once "../classes/Database.php";
+                        $board = new Board($db);
+                        echo $board->getDone();
+                        ?>
                         </ul>
                         <footer>
-                            <input type="text" class="progress-input" placeholder="Add a card...">
-                            <button class="progress-add">Add</button>
+                        <form action="" method="get">
+                            <input type="text" class="progress-input" name='done' id="done" placeholder="Add a card...">
+                            <input type="submit" name="submit" value="ADD" class="progress-add">
+                            </form>
+                        </footer>
                         </footer>
                     </div>
                     
