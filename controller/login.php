@@ -7,8 +7,7 @@ function redirect($url, $statusCode = 303)
    die();
 }
         if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username'])){
-          // Redirect('../views/view-profs.php', false);
-            echo "sunt in sesiune";
+          Redirect('../views/view-profs.php', false);
         }else{
             if(!empty($_POST['username']) && !empty($_POST['password'])){
                 include_once '../classes/user.php';

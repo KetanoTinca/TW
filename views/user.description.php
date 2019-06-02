@@ -21,9 +21,10 @@
             <div class="container">
                 <nav>
                     <ul>
-                        <li  style="background:white;"><a href="user.php">Timeline</a></li>
-                        <li><a href="cards.php">View Students</a></li>
-                        <li><a href="settings.php">Settings</a></li>
+                        <li  style="background:white;"><a href="user.php">Newsfeed</a></li>
+                        <li><a href="cards.php">Students</a></li>
+                        <li><a href="settings.php">Profile</a></li>
+                        <li><a href="requests.php">Requests</a></li>
                     </ul>
                 </nav>
             </div>
