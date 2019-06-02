@@ -22,6 +22,11 @@ error_reporting(E_ALL);
         exit;
     }
 
-   
+        if(isset($_GET['action']) && $_GET['action'] == 'logout'){
+            session_destroy();
+            header('Location: ../views/index.php' , true);
+        }
+
+
 
 ?>

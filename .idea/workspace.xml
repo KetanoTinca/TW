@@ -1,47 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="7c3ada65-8dfd-4f40-a53b-2bf0aa980b4a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/classes/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/navbar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/user.description.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/user.description.php" afterDir="false" />
     </list>
+=======
+    <list default="true" id="cde7b322-6f6d-4b85-b76d-9ea9a8ed415f" name="Default Changelist" comment="" />
+>>>>>>> cd7e3b35bdebbe0155d72b4b07e2c2c25b947160
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/user.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-357" />
+=======
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/Database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
+            </state>
+>>>>>>> cd7e3b35bdebbe0155d72b4b07e2c2c25b947160
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/views/user.description.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
               <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
+=======
+        <entry file="file://$PROJECT_DIR$/classes/user.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="839">
+              <caret line="98" column="142" selection-start-line="98" selection-start-column="142" selection-end-line="98" selection-end-column="142" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+>>>>>>> cd7e3b35bdebbe0155d72b4b07e2c2c25b947160
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/views/navbar.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="243">
               <caret line="18" selection-start-line="18" selection-end-line="18" />
+=======
+        <entry file="file://$PROJECT_DIR$/views/signup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/signup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
+>>>>>>> cd7e3b35bdebbe0155d72b4b07e2c2c25b947160
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -60,14 +113,32 @@
         <option value="$PROJECT_DIR$/.idea/misc.xml" />
         <option value="$PROJECT_DIR$/.idea/vcs.xml" />
         <option value="$PROJECT_DIR$/.idea/modules.xml" />
+=======
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/classes/Database.php" />
+        <option value="$PROJECT_DIR$/controller/login.php" />
+        <option value="$PROJECT_DIR$/classes/user.php" />
+        <option value="$PROJECT_DIR$/controller/signup.php" />
+        <option value="$PROJECT_DIR$/views/login.php" />
+        <option value="$PROJECT_DIR$/views/signup.php" />
+>>>>>>> cd7e3b35bdebbe0155d72b4b07e2c2c25b947160
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
     <option name="x" value="720" />
     <option name="y" value="-20" />
     <option name="width" value="980" />
     <option name="height" value="1050" />
+=======
+    <option name="x" value="260" />
+    <option name="y" value="25" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+>>>>>>> cd7e3b35bdebbe0155d72b4b07e2c2c25b947160
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -79,12 +150,31 @@
         <subPane>
           <expand>
             <path>
+<<<<<<< HEAD
               <item name="TW" type="b2602c69:ProjectViewProjectNode" />
               <item name="TW" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TW" type="b2602c69:ProjectViewProjectNode" />
               <item name="TW" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="TW-jerry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TW-jerry" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TW-jerry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TW-jerry" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TW-jerry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TW-jerry" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TW-jerry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TW-jerry" type="462c0819:PsiDirectoryNode" />
+>>>>>>> cd7e3b35bdebbe0155d72b4b07e2c2c25b947160
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -95,8 +185,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> cd7e3b35bdebbe0155d72b4b07e2c2c25b947160
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -115,16 +209,26 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="7c3ada65-8dfd-4f40-a53b-2bf0aa980b4a" name="Default Changelist" comment="" />
       <created>1559481028930</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559481028930</updated>
       <workItem from="1559481030283" duration="611000" />
+=======
+      <changelist id="cde7b322-6f6d-4b85-b76d-9ea9a8ed415f" name="Default Changelist" comment="" />
+      <created>1558257656860</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558257656860</updated>
+      <workItem from="1558257659154" duration="6905000" />
+>>>>>>> cd7e3b35bdebbe0155d72b4b07e2c2c25b947160
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="611000" />
   </component>
   <component name="ToolWindowManager">
@@ -133,6 +237,16 @@
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+=======
+    <option name="totallyTimeSpent" value="6905000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
+>>>>>>> cd7e3b35bdebbe0155d72b4b07e2c2c25b947160
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -151,11 +265,36 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+<<<<<<< HEAD
+=======
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17857143" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="4" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+    </layout-to-restore>
+>>>>>>> cd7e3b35bdebbe0155d72b4b07e2c2c25b947160
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/views/user.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-357" />
@@ -172,6 +311,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
+=======
+    <entry file="file://$PROJECT_DIR$/classes/Database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="2" lean-forward="true" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="839">
+          <caret line="98" column="142" selection-start-line="98" selection-start-column="142" selection-end-line="98" selection-end-column="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+>>>>>>> cd7e3b35bdebbe0155d72b4b07e2c2c25b947160
         </state>
       </provider>
     </entry>
