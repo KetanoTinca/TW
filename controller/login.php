@@ -10,7 +10,7 @@ function redirect($url, $statusCode = 303)
 }
         if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username'])){
 
-          Redirect('../views/view-profs.php', false);
+
 
            // session_destroy();
 

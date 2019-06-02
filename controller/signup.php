@@ -32,7 +32,7 @@ function redirect($url, $statusCode = 303)
             Redirect('../views/login.php?status=confirm', false);
             echo "m-am inregistrat";
         }else{
-            Redirect('../views/signup.php?status=wrong1', false);
+           Redirect('../views/signup.php?status=wrong1', false);
         }
     }
 

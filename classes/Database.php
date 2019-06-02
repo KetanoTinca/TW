@@ -3,6 +3,7 @@ define('DB_HOST', 'localhost:3310');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'acatism');
+$dbname='acatism';
 
 error_reporting(E_ALL);
     ini_set("display_errors", 1);
@@ -26,6 +27,15 @@ error_reporting(E_ALL);
             session_destroy();
             header('Location: ../views/index.php' , true);
         }
+
+        // $sql = "SHOW TABLES FROM $dbname";
+        // $stmt = $db->prepare($sql);
+        // $stmt->execute();
+        // while( $result = $stmt->fetch())
+        // {
+        // //   $tableList[] = $cRow[0];
+        // echo $result[0];
+        // }
 
 
 

@@ -1,5 +1,6 @@
 <?php
 
+include_once '../classes/crypt.php';
 
 	class User
 	{
@@ -24,8 +25,8 @@
 		*/
 		public function accountLogin()
         {
-            $sql = "SELECT userType
-            	    FROM user
+            $sql = "SELECT id,userType
+            	    FROM user 
                 	WHERE username=:user
                 	AND pass=:pass
                        LIMIT 1";
@@ -33,19 +34,58 @@
             echo $sql;
             try {
                 $stmt = $this->_db->prepare($sql);
+                $pass_enc = new Crypt((trim($_POST['password'])),'st');
+            
+                $pass=$pass_enc->getString();
                 $stmt->bindParam(':user', $_POST['username'], PDO::PARAM_STR);
-                $stmt->bindParam(':pass', $_POST['password'], PDO::PARAM_STR);
+                $stmt->bindParam(':pass', $pass, PDO::PARAM_STR);
 
                 $stmt->execute();
                 if ($stmt->rowCount() == 1) {
                     $_SESSION['Username'] = htmlentities($_POST['username'], ENT_QUOTES);
                     $_SESSION['LoggedIn'] = 1;
                     $result = $stmt->fetch();
-                    if($result[0] == 1){
+                    if($result[1] == 1){
                         $_SESSION['userType'] = 'student';
+                        $sql2 = "SELECT id
+            	    FROM student 
+                	WHERE user_fk=:user_fk
+                	
+                       LIMIT 1";
+                    $stmt2 = $this->_db->prepare($sql2);
+                    $stmt2->bindParam(':user_fk',$result[0], PDO::PARAM_STR);
+                    $stmt2->execute();
+                    if ($stmt2->rowCount() == 1) {
+                        $result2 = $stmt2->fetch();
+                   
+                        $_SESSION['student_id'] = $result2[0];
+                    
+                    }else{
+                        return FALSE;
+                    }
+
+                
+                       
                     }else{
                         $_SESSION['userType'] = 'teacher';
+                        $sql2 = "SELECT id
+            	    FROM teacher 
+                	WHERE user_fk=:user_fk
+                	
+                       LIMIT 1";
+                    $stmt2 = $this->_db->prepare($sql2);
+                    $stmt2->bindParam(':user_fk',$result[0], PDO::PARAM_STR);
+                    $stmt2->execute();
+                    if ($stmt2->rowCount() == 1) {
+                        $result2 = $stmt2->fetch();
+                   
+                        $_SESSION['teacher_id'] = $result2[0];
+                    
+                    }else{
+                        return FALSE;
                     }
+                    }
+                    // $_SESSION['user_id'] = $result[0];
                     return TRUE;
                 } else {
                     return FALSE;
@@ -63,7 +103,12 @@
             $lastName = trim($_POST['lastName']);
             $username = trim($_POST['userName']);
             $email = trim($_POST['email']);
-            $pass = trim($_POST['password']);
+            // $pass = trim($_POST['password']);
+            // $pass =crypt(trim($_POST['password']),'st');
+            $pass_enc = new Crypt((trim($_POST['password'])),'st');
+            
+            $pass=$pass_enc->getString();
+           // echo $pass;
             if($_POST['userType'] == "student"){
                 $userType = 1;
             }else{
