@@ -35,41 +35,41 @@
                 <tr>
                     <th>Teachers</th>
                     <th>Subjects</th>
-                    <th>Sign-Up</th>
+                    <th></th>
                 </tr>
                 <tr>
                     <th>Name, Surname</th>
                     <th><a href="./form.html">Subject1, Subject2, Subject3</a></th>
                     <th><button class="small_button"
-                            onclick="location.href='./form.html'">Sign-Up</button>
+                            onclick="location.href='./form.html'">Apply</button>
                     </th>
                 </tr>
                 <tr>
                     <th>Name, Surname</th>
                     <th><a href="./form.html">Subject1, Subject2, Subject3</a></th>
                     <th><button class="small_button"
-                            onclick="location.href='./form.html'">Sign-Up</button>
+                            onclick="location.href='./form.html'">Apply</button>
                     </th>
                 </tr>
                 <tr>
                     <th>Name, Surname</th>
                     <th><a href="./teacher-descriptions/name-surname">Subject1, Subject2, Subject3</a></th>
                     <th><button class="small_button"
-                            onclick="location.href='./form.html'">Sign-Up</button>
+                            onclick="location.href='./form.html'">Apply</button>
                     </th>
                 </tr>
                 <tr>
                     <th>Name, Surname</th>
                     <th><a href="./form.html">Subject1, Subject2, Subject3</a></th>
                     <th><button class="small_button"
-                            onclick="location.href='./form.html'">Sign-Up</button>
+                            onclick="location.href='./form.html'">Apply</button>
                     </th>
                 </tr>
                 <tr>
                     <th>Name, Surname</th>
                     <th><a href="./form.html">Subject1, Subject2, Subject3</a></th>
                     <th><button class="small_button"
-                            onclick="location.href='./form.html'">Sign-Up</button>
+                            onclick="location.href='./form.html'">Apply</button>
                     </th>
                 </tr>
             </table>
