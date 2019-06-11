@@ -13,6 +13,8 @@
 
 <body>
 
+    <?php include 'navbar.php';?>
+
     <section>
         <div class="section-wrapper">
             <div></div>
