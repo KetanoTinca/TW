@@ -153,8 +153,20 @@ function getThesisYear($themeId){
 </div>
 
 
+<?php
+if(isset($_GET['action']) && $_GET['action'] == 'added'){
+    echo "<h4 style='color: green;'><center>You successfully applied!</center></h4>";
+}else{
+    if(isset($_GET['action']) && $_GET['action']=='wrong'){
+        echo "<h4 style='color: red;'><center>Something was wrong!</center></h4>";
+    }
+}
+?>
+
 <div class="row">
     <div class="side">
+        <form action="../controller/applyRequest.php" method="post">
+            <input type="hidden" name="themeId" value=<?php echo isset($_GET['id']) ? $_GET['id'] : 0; ?>>
         <h2>Apply</h2>
         <h5>Press the button, or go back to apply for another subject.</h5>
         <?php
@@ -167,8 +179,9 @@ function getThesisYear($themeId){
         echo "<p> Grade: <strong>" . getGrade($_SESSION['student_id']). "</strong></p>";
         ?>
         <div class="button_wrapper">
-            <button class="small_button" id="cancel_button">Apply</button>
+            <button class="small_button" id="cancel_button" type="submit" <?php echo isset($_GET['action']) && $_GET['action'] == "added" ? "disabled" : "";?>>Apply</button>
         </div>
+        </form>
     </div>
     <div class="main">
         <h2>Specifications</h2>
