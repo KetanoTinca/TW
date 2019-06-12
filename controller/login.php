@@ -31,7 +31,7 @@ function redirect($url, $statusCode = 303)
                         unset($_COOKIE['username']);
                         setcookie('username', '',time()-3600,"/");
                             echo "console.log('nu pun cookie')";
-                       // Redirect('../views/view-profs.php', false);
+                       Redirect('../views/view-profs.php', false);
 
                     }
                 }else{

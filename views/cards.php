@@ -32,7 +32,11 @@
                     <tr>
                         <th>Birleanu, Andrei</th>
                         <th><p>Find my car</p></th>
-                        <th>30%</th>
+                        <?php  include_once "../classes/board.php";
+                      include_once "../classes/Database.php";
+                        $board = new Board($db);
+                     echo $board->getPercent();
+                        ?>
                         <th><button class="small_button" onclick="location.href='./progress.html'">Board</button></th>
                     </tr>
                     <tr>
