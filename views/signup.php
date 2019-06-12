@@ -22,7 +22,7 @@
                                 account</a></span>
                         <div class="sign-up-container">
                             <?php
-                            if(isset($_GET['status']) && $_GET['status']=='wrong1'){
+                            if (isset($_GET['status']) && $_GET['status'] == 'wrong1') {
                                 echo "<p>Smth went wrong motherfucker</p>";
                             }
                             ?>
@@ -43,28 +43,28 @@
                                 <input type="password" name="confirmPassword" id="confirmPassword" tabindex="0" placeholder="e.g., ••••••••••••" onchange='check_pass();' required>
                                 <span id='message'></span>
                                 <label for="userType">User Type</label>
-                               
-                                     <select id="userType" name="userType" onchange='change_status()'>
-                                          <option value="teacher">Teacher</option>
-                                          <option value="student">Student</option>
-                                     </select>
-                               
+                                <div class="styled-select slate">
+                                    <select id="userType" name="userType" onchange='change_status()'>
+                                        <option value="teacher">Teacher</option>
+                                        <option value="student">Student</option>
+                                    </select>
+                                </div>
 
 
                                 <div id="student" style="display: none;">
 
                                     <label for="studyYear">Study Year</label>
-                                    <input type="number" name="studyYear" id="studyYear"  min="1" max="3" >
+                                    <input type="number" name="studyYear" id="studyYear" min="1" max="3">
                                     <label for="git">Git Repo</label>
-                                    <input type="text" name="gitRepo" id="gitRepo" >
+                                    <input type="text" name="gitRepo" id="gitRepo">
                                     <label for="averageGrade">Average Grade</label>
-                                    <input type="text" name="averageGrade" id="averageGrade" >
+                                    <input type="text" name="averageGrade" id="averageGrade">
                                 </div>
                                 <div id="teacher" style="display: block;">
                                     <label for="degree">Degree</label>
-                                    <input type="text" name="degree" id="degree" >
+                                    <input type="text" name="degree" id="degree">
                                     <label for="web">Your WebSite</label>
-                                    <input type="text" name="teacherWebSite" id="teacherWebSite"  >
+                                    <input type="text" name="teacherWebSite" id="teacherWebSite">
                                     <span id='messageURL'></span>
 
                                 </div>
@@ -80,7 +80,7 @@
         <footer>
 
             <ul>
-                <li  onclick="location.href='./index.html'">About</li>
+                <li onclick="location.href='./index.html'">About</li>
                 <li onclick="window.location.href='http://www.info.uaic.ro/bin/Main/'">University Website</li>
                 <li onclick="window.location.href='https://profs.info.uaic.ro/~orar/'">Classes</li>
                 <li onclick="location.href='./index.html'">Contact</li>

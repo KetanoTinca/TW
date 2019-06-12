@@ -121,61 +121,34 @@
             outline: none
         }
         /*the container must be positioned relative:*/
-.custom-select {
-    position: relative;
-    font-family: Arial;
-  }
-  
-  .custom-select select {
-    display: none; /*hide original SELECT element:*/
-  }
-  
-  .select-selected {
-    background-color: DodgerBlue;
-  }
-  
-  /*style the arrow inside the select element:*/
-  .select-selected:after {
-    position: absolute;
-    content: "";
-    top: 14px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: #fff transparent transparent transparent;
-  }
-  
-  /*point the arrow upwards when the select box is open (active):*/
-  .select-selected.select-arrow-active:after {
-    border-color: transparent transparent #fff transparent;
-    top: 7px;
-  }
-  
-  /*style the items (options), including the selected item:*/
-  .select-items div,.select-selected {
-    color: #ffffff;
-    padding: 8px 16px;
-    border: 1px solid transparent;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    cursor: pointer;
-    user-select: none;
-  }
-  
-  /*style items (options):*/
-  .select-items {
-    position: absolute;
-    background-color: DodgerBlue;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 99;
-  }
-  
-  /*hide the items when the select box is closed:*/
-  .select-hide {
-    display: none;
-  }
+        .styled-select {
+            background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+            height: 29px;
+            overflow: hidden;
+            width: 240px;
+         }
+         
+         .styled-select select {
+            background: transparent;
+            border: none;
+            font-size: 14px;
+            height: 29px;
+            padding: 5px; /* If you add too much padding here, the options won't show in IE */
+            width: 268px;
+         }
+         
+         .styled-select.slate {
+            background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+            height: 34px;
+            width: 240px;
+         }
+         
+         .styled-select.slate select {
+            border: 1px solid #ccc;
+            font-size: 16px;
+            height: 34px;
+            width: 268px;
+         }
   
   .select-items div:hover, .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
