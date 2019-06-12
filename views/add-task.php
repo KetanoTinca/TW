@@ -14,20 +14,25 @@
 <body>
 
     <?php include 'navbar.php';?>
-
+    
     <section>
         <div class="section-wrapper">
             <div></div>
             <div>
                 <h1>Add a task</h1>
                 <div class="form-container">
-                    <form method = "post" action = "../controller/add-task.php">
+                    <form method = "get" action = "../views/add-task.php">
                         <?php if(isset($_GET['status']) && $_GET['status'] == 'wrong'  ){
                             echo "<p>Error! Couldn't add the task.</p>";
                         }
                         if (isset($_GET['status']) && $_GET['status'] == 'confirm') {
                             echo "<p>Task succefully added!</p>";
-                        }  ?>
+                        }  
+                        if (isset($_GET['status'])) {
+                            echo "<label for=\"Status\">Status</label>";
+                            echo "<input type=\"text\" name=\"status\" value=".$_GET['status']." style=\"dipsplay: none;\" readonly>";
+                        } 
+                        ?>
 
                             <label for="Title">Title</label>
                             <input type="text" name="title" id="title" autofocus>

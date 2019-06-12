@@ -41,8 +41,8 @@ class Board{
             echo "<th>" . $percent . "% </th>";
     }    
 
-    public function getToDo(){
-        $sql = "select * from task where status = 0";
+    public function getToDo($boardID){
+        $sql = "select * from task where status = 0 and " ."board_fk = " . $boardID;
         if($stmt = $this->_db->prepare($sql))
                 {
                     $stmt->execute();
@@ -56,8 +56,8 @@ class Board{
     
     }
 
-    public function getInProgress(){
-        $sql = "select * from task where status = 1";
+    public function getInProgress($boardID){
+        $sql = "select * from task where status = 1 and " ."board_fk = " . $boardID;
         if($stmt = $this->_db->prepare($sql))
                 {
                     $stmt->execute();
@@ -71,8 +71,8 @@ class Board{
     
     }
 
-    public function getFeedback(){
-        $sql = "select * from task where status = 2";
+    public function getFeedback($boardID){
+        $sql = "select * from task where status = 2 and " ."board_fk = " . $boardID;
         if($stmt = $this->_db->prepare($sql))
                 {
                     $stmt->execute();
@@ -86,8 +86,8 @@ class Board{
     
     }
 
-    public function getDone(){
-        $sql = "select * from task where status = 3";
+    public function getDone($boardID){
+        $sql = "select * from task where status = 3 and " ."board_fk = " . $boardID;
         if($stmt = $this->_db->prepare($sql))
                 {
                     $stmt->execute();
@@ -101,9 +101,9 @@ class Board{
     
     }
 
-    public function postToDo($taskTitle){
+    public function postToDo($boardID,$taskTitle){
 
-        $sql = "INSERT into task (board_fk,deadline,taskDescription, title,status) values (1,'2019-06-08','".$taskTitle."', '".$taskTitle."' ,0)";
+        $sql = "INSERT into task (board_fk,deadline,taskDescription, title,status) values (".$boardID.",'2019-06-08','".$taskTitle."', '".$taskTitle."' ,0)";
         
         if($stmt = $this->_db->prepare($sql)){
             $stmt->execute();
@@ -111,9 +111,9 @@ class Board{
     }
 
     }
-    public function postInProgress($taskTitle){
+    public function postInProgress($boardID,$taskTitle){
 
-        $sql = "INSERT into task (board_fk,deadline,taskDescription, title,status) values (1,'2019-06-08','Test2', '".$taskTitle."' ,1)";
+        $sql = "INSERT into task (board_fk,deadline,taskDescription, title,status) values (".$boardID.",'2019-06-08','Test2', '".$taskTitle."' ,1)";
        
         if($stmt = $this->_db->prepare($sql)){
             $stmt->execute();
@@ -122,9 +122,9 @@ class Board{
 
     }
 
-    public function postFeedBack($taskTitle){
+    public function postFeedBack($boardID, $taskTitle){
 
-        $sql = "INSERT into task (board_fk,deadline,taskDescription, title,status) values (1,'2019-06-08','Test2', '".$taskTitle."' ,2)";
+        $sql = "INSERT into task (board_fk,deadline,taskDescription, title,status) values (".$boardID.",'2019-06-08','Test2', '".$taskTitle."' ,2)";
        
         if($stmt = $this->_db->prepare($sql)){
             $stmt->execute();
@@ -133,9 +133,9 @@ class Board{
 
     }
 
-    public function postDone($taskTitle){
+    public function postDone($boardID,$taskTitle){
 
-        $sql = "INSERT into task (board_fk,deadline,taskDescription, title,status) values (1,'2019-06-08','Test2', '".$taskTitle."' ,3)";
+        $sql = "INSERT into task (board_fk,deadline,taskDescription, title,status) values (".$boardID.",'2019-06-08','Test2', '".$taskTitle."' ,3)";
        
         if($stmt = $this->_db->prepare($sql)){
             $stmt->execute();
