@@ -34,71 +34,19 @@
 
     <?php include 'navbar.php';?>
 
-    <?php include 'user.description.php';?>
+    <?php include 'user.description.php';
 
-           <div class="container" style="background-color: white;">
-                <div class="text" >
-                    <h1>Timeline</h1>
-                    <form class="add-theme-form" method="post" action ="../controller/addPost.php">
-                        <p style = " text-align: left; margin: 0; width:100% ">Do you want to add a new post for your students?</p>
-                        <input type="text" name ="title" id="title">
-                        <textarea id="postContent" name="postContent" required placeholder="smth..." rows="5" cols="60"></textarea>
-                        <?php
-                        echo "<select id=\"themeId\" name=\"themeId\" >";
-                        $sql = "SELECT id,themeName
-            	    FROM theme 
-                	WHERE teacher_fk=:teacher_fk
-                	";
-                        try{
-                            $stmt = $db->prepare($sql);
+    if(isset($_SESSION['userType']) && $_SESSION['userType'] == 'teacher')
+    {
+        include 'newsfeedProf.php';
+    }else{
+        include 'newsfeedStudent.php';
+    }
+
+    ?>
 
 
-                            $stmt->bindParam(':teacher_fk', $_SESSION['teacher_id'], PDO::PARAM_STR);
-                            $stmt->execute();
-                            while($row = $stmt->fetch())
-                            {
-                              //  echo "<li>".$row['taskDescription']." with deadline ".$row['deadline']."</li>";
-                                echo "<option value=\"$row[0]\">$row[1]</option>";
 
-                            }
-
-                        }catch (PDOException $e){
-                            echo $e->getMessage();
-
-                        }
-
-                        ?>
-                        <input type="submit" id="addPost"value="POST">
-
-                    </form>
-
-                </div>
-                <ul class="active">
-                    <li><p><a href="#">Andrei Birleanu</a> moved <span>Intefata aplicatie</span> from <b>In Lucru</b> to <b>Facute</b></p>
-                    <p> Monday, 10 Mar 2019, 2:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
-                    <li><p><a href="#">Laura Velicescu</a> moved <span>Bug baza de date</span> from <b>Testare</b> to <b>TO DO LIST</b></p>
-                    <p> Monday, 10 Mar 2019, 1:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
-                    <li><p><a href="#">Andrei Birleanu</a> moved <span>Intefata aplicatie</span> from <b>TO DO LIST</b> to <b>In Lucru</b></p>
-                    <p> Monday, 6 Mar 2019, 4:20 AM  in <a href="$"><b>Licenta 2019</b></a></p></li>
-                    <li><p><a href="#">Tinca Ketano</a> moved <span>Alegere proiect</span> from <b>In Lucru</b> to <b>Facute</b></p>
-                    <p> Monday, 1 Mar 2019, 6:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
-                    <li><p><a href="#">Laura Velicescu</a> moved <span>Conectare baza de date</span> from <b>In Lucru</b> to <b>Facute</b></p>
-                    <p> Monday, 1 Mar 2019, 2:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
-                </ul>
-                <button onclick="myFunction()" id="show-more">Load more activity <span id="dots">...</span></button>
-                <ul id="hidden-list">
-                    <li><p><a href="#">Andrei Birleanu</a> moved <span>Intefata aplicatie</span> from <b>In Lucru</b> to <b>Facute</b></p>
-                    <p> Monday, 10 Mar 2019, 2:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
-                    <li><p><a href="#">Laura Velicescu</a> moved <span>Bug baza de date</span> from <b>Testare</b> to <b>TO DO LIST</b></p>
-                    <p> Monday, 10 Mar 2019, 1:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
-                    <li><p><a href="#">Andrei Birleanu</a> moved <span>Intefata aplicatie</span> from <b>TO DO LIST</b> to <b>In Lucru</b></p>
-                    <p> Monday, 6 Mar 2019, 4:20 AM  in <a href="$"><b>Licenta 2019</b></a></p></li>
-                    <li><p><a href="#">Tinca Ketano</a> moved <span>Alegere proiect</span> from <b>In Lucru</b> to <b>Facute</b></p>
-                    <p> Monday, 1 Mar 2019, 6:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
-                    <li><p><a href="#">Laura Velicescu</a> moved <span>Conectare baza de date</span> from <b>In Lucru</b> to <b>Facute</b></p>
-                    <p> Monday, 1 Mar 2019, 2:36 PM  in <a href="$"><b>Licenta 2019</b></a></p></li>
-                </ul>
-           </div>
 
         <footer>
             <p>AcaTisM App, Copyright &copy; 2019</p>
