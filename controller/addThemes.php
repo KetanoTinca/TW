@@ -17,7 +17,7 @@ if(!empty($_POST['themeTitle']) && !empty($_POST['themeDescription']) && !empty(
         Redirect('../views/add-theme.php?action=added', false);
 
     }else{
-        Redirect('../views/user.php?status=wrong', false);
+        Redirect('../views/add-theme.php?status=wrong', false);
     }
 }
 
