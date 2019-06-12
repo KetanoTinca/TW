@@ -48,8 +48,6 @@ ul{
     width: 200px;
     background: #4a4a5a;
     border: none;
-    padding-left: 20px;
-    padding-right: 20px;
     color: #dbe3ee;
     border-radius: 8px;
     font-size: 20px;
@@ -65,8 +63,6 @@ ul{
     width: 140px;
     background: #37465b;
     border: none;
-    padding-left:10%;
-    padding-right: 10%;
     border-radius: 6px;
     font-size: 12px;
     text-align: center;
@@ -77,6 +73,21 @@ ul{
 .small_button:hover{
     background: #cf9090;
 }
+
+#cancel_button{
+    margin:25px;
+    align-items: center;
+    width: 30%;
+    position: relative;
+
+}
+
+.button_wrapper{
+    text-align: center;
+}
+
+
+
 #branding{
     padding-left: 30px;
 }
@@ -146,7 +157,7 @@ footer{
     margin-top:0px;
     padding: 5px;
     text-align: center;
-    background-color: #b55d5c;
+    background-color: #37465b;
     color: #dbe3ee;
 }
 
@@ -245,34 +256,6 @@ footer{
     z-index:1;
 }
 
-input[type=text].header-search-input {
-    background-color: hsla(0,0%,100%,.3);
-    border-radius: 3px;
-    border: none;
-    box-shadow: none;
-    color: hsla(0,0%,100%,.5);
-    float: left;
-    font-size: 13px;
-    height: 32px;
-    margin: 0;
-    min-height: 32px;
-    padding-right: 32px;
-    padding-left: 8px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    line-height: 19px;
-
-    width: 150px;
-    z-index: 1;
-}
-
-.header-search-icon {
-    cursor: pointer;
-    position: absolute;
-    right: 15%;
-    top: 10%;
-    z-index: 2;
-}
 
 .member-initials {
     display: block;
@@ -286,4 +269,10 @@ input[type=text].header-search-input {
     text-align: center;
     top: 0;
     width: 100%;
+}
+
+#logged_message {
+    padding-left: 10px;
+    color: #dbe3ee;
+    font-size: 20px;
 }
