@@ -15,11 +15,21 @@
                     </a>
                 </div>
                 <div>
-    
 
-    
+                    <a class="header-btn open-search-btn" href="./search.php" title="Search for projects">
+                        <img class="header-btn-icon" src="../img/search.png" alt="S">
+                    </a>
+                    <div class="header-search">
+                        <input class="header-search-input focus" type="text">
+                        <span class="header-search-icon icon-lg icon-search light">
+                                        <img class="header-btn-icon" src="../img/search.png" alt="S">
+
+                                    </span>
+
                     </div>
                 </div>
+
+
                 <div class="header-user">
                     <a class="header-btn" href="./progress.php " title="Create a project">
                         <img class="header-btn-icon" src="../img/plus.png" alt="+">

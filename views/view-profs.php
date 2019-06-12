@@ -13,6 +13,7 @@
 
 <body>
     <div id="surface">
+
     <?php include 'navbar.php';
     include '../classes/Database.php';
     include '../controller/session.php';
