@@ -18,6 +18,14 @@ body{
     
 }
 
+.add-theme-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
 
 
 .container{
@@ -187,7 +195,9 @@ input[type=text].header-search-input {
    
     overflow: hidden;
 }
-
+#addTheme{
+    margin-top:10px;
+}
 #description{
    
     margin:auto; 
@@ -341,7 +351,8 @@ input[type=text].header-search-input {
     background-color: white;
     width:80%;
     margin:auto;
-    padding-top:55px;
+    padding-top:30px;
+    padding-bottom:25px;
     border-radius:0 0 20px 20px;
 }
 .text{

@@ -26,8 +26,8 @@ class Theme{
         }
     public function addTheme(){
         try{
-        // $sql = "INSERT INTO theme VALUES (NULL, :teacher, :title, :descript, :academicYear)";
-        $sql='INSERT INTO theme VALUES(NULL, ' . $this->teacher_Fk . ' ,"' . $this->title . '", "' . $this->description . '", "' . $this->academicYear . '")';
+         $sql = "INSERT INTO theme VALUES (NULL, :teacher, :title, :descript, :academicYear)";
+      //  $sql='INSERT INTO theme VALUES(NULL, ' . $this->teacher_Fk . ' ,"' . $this->title . '", "' . $this->description . '", "' . $this->academicYear . '")';
        echo $sql;
         if($stmt = $this->_db->prepare($sql))
                 {
@@ -36,10 +36,10 @@ class Theme{
                     echo $this->title; 
                     echo $this->description;
                     // $this->description='dsafa';
-                    // $stmt->bindParam(":teacher", $this->teacher_Fk, PDO::PARAM_STR);
-                    // $stmt->bindParam(":title", $this->title, PDO::PARAM_STR);
-                    // $stmt->bindParam(":descript",$this->description , PDO::PARAM_STR);
-                    // $stmt->bindParam(":academicYear", $this->academicYear, PDO::PARAM_STR);
+                     $stmt->bindParam(":teacher", $this->teacher_Fk, PDO::PARAM_STR);
+                     $stmt->bindParam(":title", $this->title, PDO::PARAM_STR);
+                     $stmt->bindParam(":descript",$this->description , PDO::PARAM_STR);
+                     $stmt->bindParam(":academicYear", $this->academicYear, PDO::PARAM_STR);
                    
                     $stmt->execute();
                     $stmt->closeCursor();

@@ -14,8 +14,8 @@ if(!empty($_POST['themeTitle']) && !empty($_POST['themeDescription']) && !empty(
     
     $theme = new Theme($db,$_POST['themeTitle'],$_POST['themeDescription'],$_POST['academicYear'],$_SESSION['teacher_id']);
     if($theme->addTheme()=== TRUE){
-        Redirect('../views/user.php?action=added', false);
-        echo "m-am logat";
+        Redirect('../views/add-theme.php?action=added', false);
+
     }else{
         Redirect('../views/user.php?status=wrong', false);
     }
