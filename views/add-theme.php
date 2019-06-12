@@ -18,20 +18,29 @@
 <?php include 'navbar.php';?>
 
 <?php include 'user.description.php';?>
+<?php include  "../controller/session.php"; ?>
 
 <section id="activity">
 
+    <?php
+    if(isset($_GET['action']) && $_GET['action'] == 'added'){
+        echo "<h4 style='color: green;'><center>Succesfuly added the theme</center></h4>";
+    }else{
+        if(isset($_GET['action']) && $_GET['action']=='wrong'){
+            echo "<h4 style='color: red;'><center>Something wrong happened</center></h4>";
+        }
+    }
+    ?>
+    <form class="add-theme-form" method="post" action="../controller/addThemes.php" >
 
-    <form method="post" action="../controller/addThemes.php" >
+        <label for="themeTitle" style="width:50%;margin:auto;">Theme Title</label>
+        <input type="text" name="themeTitle" id ="themeTitle" style="width:50%;margin:auto;">
+        <label style="width:50%;margin:auto;">Theme Description</label>
+        <textarea id="themeDescription" name="themeDescription" required placeholder="Describe your Theme" rows="5" cols="60" style="width:50%;margin:auto;"></textarea>
 
-        <label for="themeTitle">Theme Title</label>
-        <input type="text" name="themeTitle" id ="themeTitle">
-        <label>Theme Description</label>
-        <textarea id="themeDescription" name="themeDescription" required placeholder="Describe your Theme" rows="5" cols="60"></textarea>
-
-        <label>Academic Year</label>
+        <label style="width:50%;margin:auto;">Academic Year</label>
         <?php
-        echo "<select id=\"academicYear\" name=\"academicYear\">";
+        echo "<select id=\"academicYear\" name=\"academicYear\" style=\"width:50%;margin:auto;margin-top: 10px;\">";
         $currentYear = date("Y");
         $count = 6;
         $string = ($currentYear-1) . "-" . $currentYear;
@@ -44,7 +53,7 @@
         }
 
         ?>
-        <input id="addTheme" tabindex="0" type="submit" class="button button-green" value="Add this Theme">
+        <input id="addTheme" tabindex="0" type="submit" class="button button-green" value="Add this Theme" style="width:15%;margin:auto;margin-top:25px;">
     </form>
 
 </section>
