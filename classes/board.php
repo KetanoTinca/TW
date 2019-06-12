@@ -33,8 +33,11 @@ class Board{
                 $row = $stmt->fetch();
                 $done = $row[0];
             }
+            if($all == 0){
+            $percent = 0;
+            }else{
             $percent = round(($done * 100 / $all),2);
-            
+            }
             echo "<th>" . $percent . "% </th>";
     }    
 

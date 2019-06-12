@@ -58,9 +58,9 @@ Redirect('../views/view-profs.php', false);
                         <label style="float: right;width:50%;">Remember me</label>
                         <?php if(isset($_COOKIE['username'])) {
 
-                            echo "<input type=\"checkbox\" id=\"remember\" name=\"remember\" checked style=\"float: right;\">";
+                            echo "<input type=\"checkbox\" id=\"remember\" name=\"remember\" checked style=\"float: right;margin-top: 7px;margin-right: 7px;\">";
                         }else{
-                            echo "<input type=\"checkbox\" id=\"remember\" name=\"remember\"  style=\"float: right;\">";
+                            echo "<input type=\"checkbox\" id=\"remember\" name=\"remember\"  style=\"float: right;margin-top: 7px;margin-right: 7px;\">";
                         }
                         ?>
 
