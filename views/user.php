@@ -39,8 +39,8 @@
            <div class="container" style="background-color: white;">
                 <div class="text" >
                     <h1>Timeline</h1>
-                    <form method="post" action ="../controller/addPost.php">
-                        <p>Do you want to add a new post for your students?</p>
+                    <form class="add-theme-form" method="post" action ="../controller/addPost.php">
+                        <p style = " text-align: left; margin: 0; width:100% ">Do you want to add a new post for your students?</p>
                         <input type="text" name ="title" id="title">
                         <textarea id="postContent" name="postContent" required placeholder="smth..." rows="5" cols="60"></textarea>
                         <?php
