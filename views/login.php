@@ -11,9 +11,19 @@ include_once "../classes/Database.php";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../CSS/login.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-    
+    <script src="../javascript/login_validation.js"></script>
 </head>
-
+<?php
+function redirect($url, $statusCode = 303)
+{
+    header('Location: ' . $url, true, $statusCode);
+    die();
+}
+if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username'])){
+// session_destroy();
+Redirect('../views/view-profs.php', false);
+}
+?>
 <body class="page-signup">
 
     <section>
@@ -34,10 +44,28 @@ include_once "../classes/Database.php";
 
 
                         <label for="email">Username</label>
-                        <input type="user" name="username" id="username" value="">
+                        <?php if(isset($_COOKIE['username'])) {
+                            $cook = $_COOKIE['username'];
+                            echo "<input type=\"user\" name=\"username\" id=\"username\" value=\"$cook\" required>";
+                        }else{
+                            echo "<input type=\"user\" name=\"username\" id=\"username\" value=\"\" required>";
+                        }
+                            ?>
+
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password" tabindex="0" placeholder="e.g., ••••••••••••">
+                        <input type="password" name="password" id="password" tabindex="0" placeholder="e.g., ••••••••••••" required>
                         <input id="signup" tabindex="0" type="submit" class="button button-green" value="Sign In">
+                        <label style="float: right;width:50%;">Remember me</label>
+                        <?php if(isset($_COOKIE['username'])) {
+
+                            echo "<input type=\"checkbox\" id=\"remember\" name=\"remember\" checked style=\"float: right;\">";
+                        }else{
+                            echo "<input type=\"checkbox\" id=\"remember\" name=\"remember\"  style=\"float: right;\">";
+                        }
+                        ?>
+
+
+                        <label>Click <a href="#">here</a> to recover password</label>
                     </form>
                     </div>
                 </div>
