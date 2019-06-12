@@ -1,3 +1,60 @@
+<?php include  "../controller/session.php"; ?>
+
+<?php
+
+
+
+function getProfs(){
+
+    $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME;
+    $db = new PDO($dsn, DB_USER, DB_PASS);
+    $sql="SELECT concat(concat(user.firstName, ' '), user.lastName) as name, theme.themeName as tname, theme.id FROM theme join teacher on theme.teacher_fk=teacher.id join user on teacher.user_fk=user.id";
+
+    try{
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+
+        while($row = $stmt->fetch())
+        {
+            echo "<tr>
+    <th>". $row[0]. "</th>
+    <th>". $row[1]. "</th>
+    <th><button class=\"small_button\"
+                onclick=\"location.href='./application-form.php?id=" . $row[2] . "'\">Apply</button>
+    </th>
+</tr>
+";
+
+        }
+
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+
+    }
+}
+
+function getGrade($studentId){
+
+    $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME;
+    $db = new PDO($dsn, DB_USER, DB_PASS);
+    $sql="SELECT averageGrade FROM student where id=:studentId";
+
+    try{
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':studentId', $studentId, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetch();
+        return $result[0];
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+        return null;
+    }
+
+    return null;
+}
+
+?>
+
 <section id="teacher_list">
     <div>
         <?php
@@ -44,42 +101,10 @@
                 <th>Subjects</th>
                 <th></th>
             </tr>
-            <tr>
-                <th>Name, Surname</th>
-                <th><a href="./form.html">Subject1</a></th>
-                <th><button class="small_button"
-                            onclick="location.href='./form.php'">Apply</button>
-                </th>
-            </tr>
-            <tr>
-                <th>Name, Surname</th>
-                <th><a href="./form.html">Subject2</a></th>
-                <th><button class="small_button"
-                            onclick="location.href='./form.php'">Apply</button>
-                </th>
-            </tr>
-            <tr>
-                <th>Name, Surname</th>
-                <th><a href="./teacher-descriptions/name-surname">Subject3</a></th>
-                <th><button class="small_button"
-                            onclick="location.href='./form.php'">Apply</button>
-                </th>
-            </tr>
-            <tr>
-                <th>Name, Surname</th>
-                <th><a href="./form.html">Subject4</a></th>
-                <th><button class="small_button"
-                            onclick="location.href='./form.php'">Apply</button>
-                </th>
-            </tr>
-            <tr>
-                <th>Name, Surname</th>
-                <th><a href="./form.html">Subject5</a></th>
-                <th><button class="small_button"
-                            onclick="location.href='./form.php'">Apply</button>
-                </th>
-            </tr>
-        </table>
+            <?php
+                getProfs();
+            ?>
+            </table>
         <div class="button_wrapper">
             <button class="small_button" id="cancel_button">Cancel your current thesis request</button>
             <div>
