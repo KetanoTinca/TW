@@ -19,39 +19,16 @@
         <header>To Do</header>
         <ul>
           <?php
-          if (isset($_GET['submit'])) {
-            if (isset($_GET['todo']) && $_GET['todo'] != '') {
-              $val1 = htmlentities($_GET['todo']);
-              include_once "../classes/board.php";
-              include_once "../classes/Database.php";
-              $board = new Board($db);
-              $board->postToDo(1, $val1);
-            }
-            if (isset($_GET['inprogress']) && $_GET['inprogress'] != '') {
-              $val1 = htmlentities($_GET['inprogress']);
-              include_once "../classes/board.php";
-              include_once "../classes/Database.php";
-              $board = new Board($db);
-              $board->postInProgress(1, $val1);
-            }
-            if (isset($_GET['feedback']) && $_GET['feedback'] != '') {
-              $val1 = htmlentities($_GET['feedback']);
-              include_once "../classes/board.php";
-              include_once "../classes/Database.php";
-              $board = new Board($db);
-              $board->postFeedBack(1, $val1);
-            }
+          if (isset($_GET['plus'])) {
 
-            if (isset($_GET['done']) && $_GET['done'] != '') {
-              $val1 = htmlentities($_GET['done']);
-              include_once "../classes/board.php";
-              include_once "../classes/Database.php";
-              $board = new Board($db);
-              $board->postDone(1, $val1);
-            }
+            include_once "../classes/board.php";
+            include_once "../classes/Database.php";
+            $board = new Board($db);
+            $board->updateTaks($_GET['plus']);
             header("Location: progress.php", true, 301);
           }
           ?>
+
           <?php include_once "../classes/board.php";
           include_once "../classes/Database.php";
           $board = new Board($db);

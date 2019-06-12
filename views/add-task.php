@@ -40,12 +40,12 @@ if( isset($_GET['status']) )
                         <?php 
                        
                         if (isset($_GET['status'])) {
-                            echo "<label for=\"Status\">Status</label>";
+                            
                             if($_GET['status']==10){
-                                echo "<input type=\"text\" name=\"status\" value=1 style=\"dipsplay: none;\" readonly>";
+                                echo "<input type=\"hidden\" name=\"status\" value=1 style=\"dipsplay: none;\" readonly>";
                             }
                             else
-                            echo "<input type=\"text\" name=\"status\" value=".$_GET['status']." style=\"dipsplay: none;\" readonly>";
+                            echo "<input type=\"hidden\" name=\"status\" value=".$_GET['status']." style=\"dipsplay: none;\" readonly>";
                         } 
                         ?>
 

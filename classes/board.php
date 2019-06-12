@@ -47,8 +47,11 @@ class Board{
                 {
                     $stmt->execute();
                     while($row = $stmt->fetch())
-                    {
-                            echo "<li>".$row['taskDescription']." with deadline ".$row['deadline']."</li>";
+                    {   echo   "<form action=\"./progress.php\" method=\"get\">";
+                        echo  "<button name=\"plus\" value=\"".$row['id']."\" type=\"submit\">+</button>";
+                        echo "<li>".$row['title']." with deadline ".$row['deadline']."</li>";
+                       
+                       
                     }
     
     
@@ -63,7 +66,9 @@ class Board{
                     $stmt->execute();
                     while($row = $stmt->fetch())
                     {
-                            echo "<li>".$row['title']." with deadline ".$row['deadline']."</li>";
+                        echo   "<form action=\"./progress.php\" method=\"get\">";
+                        echo  "<button name=\"plus\" value=\"".$row['id']."\" type=\"submit\">+</button>";
+                        echo "<li>".$row['title']." with deadline ".$row['deadline']."</li>";
                     }
     
     
@@ -78,7 +83,9 @@ class Board{
                     $stmt->execute();
                     while($row = $stmt->fetch())
                     {
-                            echo "<li>".$row['title']." with deadline ".$row['deadline']."</li>";
+                        echo   "<form action=\"./progress.php\" method=\"get\">";
+                        echo  "<button name=\"plus\" value=\"".$row['id']."\" type=\"submit\">+</button>";
+                        echo "<li>".$row['title']." with deadline ".$row['deadline']."</li>";
                     }
     
     
@@ -92,8 +99,8 @@ class Board{
                 {
                     $stmt->execute();
                     while($row = $stmt->fetch())
-                    {
-                            echo "<li>".$row['title']." with deadline ".$row['deadline']."</li>";
+                    {       
+                        echo "<li>".$row['title']." with deadline ".$row['deadline']."</li>";
                     }
     
     
@@ -110,6 +117,15 @@ class Board{
         
     }
 
+    }
+
+    public function updateTaks($taskID){
+
+        $sql ="UPDATE task set status = status+1 where id = " .$taskID;
+
+        if($stmt = $this->_db->prepare($sql)){
+            $stmt->execute();
+        }
     }
    
 
