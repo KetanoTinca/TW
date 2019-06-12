@@ -13,7 +13,14 @@
   <div class="ui">
     <?php include 'navbar.php'; ?>
 
-    <nav class="navbar board">Arduino - Vîrlan Cosmin</nav>
+    <nav class="navbar board">
+      <?php include_once "../classes/board.php";
+          include_once "../classes/Database.php";
+          if (isset($_GET['board'])) {
+            $board = new Board($db);
+            echo $board->getTheme($_GET['board']);
+            }
+          ?></nav>
     <div class="lists">
       <div class="list">
         <header>To Do</header>
@@ -31,8 +38,10 @@
 
           <?php include_once "../classes/board.php";
           include_once "../classes/Database.php";
+          if (isset($_GET['board'])) {
           $board = new Board($db);
-          echo $board->getToDo(1);
+          echo $board->getToDo($_GET['board']);
+          }
           ?>
         </ul>
         <footer>
@@ -46,8 +55,10 @@
         <ul>
           <?php include_once "../classes/board.php";
           include_once "../classes/Database.php";
-          $board = new Board($db);
-          echo $board->getInProgress(1);
+          if (isset($_GET['board'])) {
+            $board = new Board($db);
+            echo $board->getInProgress($_GET['board']);
+            }
           ?>
         </ul>
         <footer>
@@ -62,8 +73,10 @@
         <ul>
           <?php include_once "../classes/board.php";
           include_once "../classes/Database.php";
-          $board = new Board($db);
-          echo $board->getFeedback(1);
+          if (isset($_GET['board'])) {
+            $board = new Board($db);
+            echo $board->getFeedback($_GET['board']);
+            }
           ?>
         </ul>
         <footer>
@@ -78,8 +91,10 @@
         <ul>
           <?php include_once "../classes/board.php";
           include_once "../classes/Database.php";
-          $board = new Board($db);
-          echo $board->getDone(1);
+          if (isset($_GET['board'])) {
+            $board = new Board($db);
+            echo $board->getDone($_GET['board']);
+            }
           ?>
         </ul>
         <footer>

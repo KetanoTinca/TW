@@ -128,7 +128,29 @@ class Board{
         }
     }
    
+    public function getTheme($boardID){
+        $sql = "select theme_fk from board where id=" .$boardID;
+        if($stmt = $this->_db->prepare($sql)){
+            $stmt->execute();
+            $row=$stmt->fetch();
+            $themeFK = $row[0]; 
+            $sql = "select teacher_fk, themeName from theme where id=" .$themeFK;
+            if($stmt = $this->_db->prepare($sql)){
+                $stmt->execute();
+                $row=$stmt->fetch();
+                $teacherFK=$row[0];
+                $themeName = $row[1];
+                
 
+                 echo $themeName;
+                    
+            }
+        }
+
+        
+    }
+    
       
 }
+
 ?>
