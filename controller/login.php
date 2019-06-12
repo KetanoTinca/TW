@@ -30,8 +30,18 @@ function redirect($url, $statusCode = 303)
                         echo 3;
                         unset($_COOKIE['username']);
                         setcookie('username', '',time()-3600,"/");
-                            echo "console.log('nu pun cookie')";
-                       Redirect('../views/view-profs.php', false);
+                            //echo "console.log('nu pun cookie')";
+
+                    }
+                    if($_SESSION['userType']=='student'){
+                        if($_SESSION['board']==0)
+                        Redirect('../views/view-profs.php', false);
+                        else{
+                            Redirect('../views/user.php', false);
+                        }
+
+                    }else{
+                        Redirect('../views/user.php', false);
 
                     }
                 }else{

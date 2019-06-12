@@ -25,7 +25,7 @@ include_once '../classes/crypt.php';
 		*/
 		public function accountLogin()
         {
-            $sql = "SELECT id,userType
+            $sql = "SELECT id,userType,firstname,lastname,email
             	    FROM user 
                 	WHERE username=:user
                 	AND pass=:pass
@@ -45,9 +45,14 @@ include_once '../classes/crypt.php';
                     $_SESSION['Username'] = htmlentities($_POST['username'], ENT_QUOTES);
                     $_SESSION['LoggedIn'] = 1;
                     $result = $stmt->fetch();
+
+                    $_SESSION['firstName'] = htmlentities($result[2], ENT_QUOTES);
+                    $_SESSION['lastName'] = htmlentities($result[3], ENT_QUOTES);
+
+                    $_SESSION['email'] = htmlentities($result[4], ENT_QUOTES);
                     if($result[1] == 1){
                         $_SESSION['userType'] = 'student';
-                        $sql2 = "SELECT id
+                        $sql2 = "SELECT id,board_fk
             	    FROM student 
                 	WHERE user_fk=:user_fk
                 	
@@ -59,12 +64,12 @@ include_once '../classes/crypt.php';
                         $result2 = $stmt2->fetch();
                    
                         $_SESSION['student_id'] = $result2[0];
+                        $_SESSION['board']=$result2[1];
                     
                     }else{
                         return FALSE;
                     }
 
-                
                        
                     }else{
                         $_SESSION['userType'] = 'teacher';

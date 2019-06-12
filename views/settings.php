@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include  "../classes/Database.php"; ?>
 <html lang="en-US">
     <head>
         <meta charset="utf-8">
