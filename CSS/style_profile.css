@@ -197,6 +197,7 @@ input[type=text].header-search-input {
 }
 #addTheme{
     margin-top:10px;
+    min-width: 120px;
 }
 #description{
    
