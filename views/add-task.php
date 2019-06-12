@@ -14,7 +14,22 @@
 <body>
 
     <?php include 'navbar.php';?>
+    <?php
+if( isset($_GET['status']) )
+{
+    if(isset($_GET['status']) && isset($_GET['title']) && isset($_GET['description']) && isset($_GET['deadline'])){
     
+    include_once "../classes/board.php";
+    include_once "../classes/Database.php";
+      $board = new Board($db);
+      $board->postTask(1,$_GET['title'],$_GET['description'],$_GET['deadline'],$_GET['status']); 
+      header("Location: progress.php", true, 301);
+    }
+    
+      
+
+}
+?>
     <section>
         <div class="section-wrapper">
             <div></div>
@@ -22,14 +37,14 @@
                 <h1>Add a task</h1>
                 <div class="form-container">
                     <form method = "get" action = "../views/add-task.php">
-                        <?php if(isset($_GET['status']) && $_GET['status'] == 'wrong'  ){
-                            echo "<p>Error! Couldn't add the task.</p>";
-                        }
-                        if (isset($_GET['status']) && $_GET['status'] == 'confirm') {
-                            echo "<p>Task succefully added!</p>";
-                        }  
+                        <?php 
+                       
                         if (isset($_GET['status'])) {
                             echo "<label for=\"Status\">Status</label>";
+                            if($_GET['status']==10){
+                                echo "<input type=\"text\" name=\"status\" value=1 style=\"dipsplay: none;\" readonly>";
+                            }
+                            else
                             echo "<input type=\"text\" name=\"status\" value=".$_GET['status']." style=\"dipsplay: none;\" readonly>";
                         } 
                         ?>

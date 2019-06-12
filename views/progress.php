@@ -76,7 +76,7 @@
         <footer>
 
           <form action="./add-task.php" method="get">
-            <button name="status" value="1" type="submit">Add</button>
+            <button name="status" value="10" type="submit">Add</button>
           </form>
         </footer>
       </div>
