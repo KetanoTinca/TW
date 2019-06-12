@@ -10,7 +10,7 @@
     
                         <img class="header-btn-icon" src="../img/progres.png" alt="P">
     
-                        <span class="header-btn-text">Progress</span>
+                        <span class="header-btn-text">Board</span>
     
                     </a>
                 </div>

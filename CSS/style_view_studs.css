@@ -13,12 +13,12 @@ body{
     margin: 0;
     background-color: white;
     height:100%;
-    
+
 }
 
 
 .container{
-    
+
     margin: auto;
     width:80%;
     overflow: hidden;
@@ -42,9 +42,9 @@ h1{
     width: 100px;
     background: #1b61bd;
     border: none;
-    
+
     border-radius: 6px 6px 0 0 ;
-    
+
     font-size: 22px;
     text-align: center;
     text-decoration: none;
@@ -67,13 +67,14 @@ a{
                     HEADER NAVBAR
 
 */
+
 #header{
-        
+
     background-color: #37465b;
     overflow:hidden;
     padding: 4px;
     z-index:10;
-    
+
 }
 
 #header, .header-btn{
@@ -91,12 +92,12 @@ a{
     width: 80px;
     text-align: center;
     color:#ffffff;
-    
+
     z-index: 2;
 }
 
 .header-btn {
-   
+
     background: hsla(0,0%,100%,.3);
     border-radius: 3px;
     color: #fff;
@@ -107,7 +108,7 @@ a{
     margin-right: 4px;
     min-width: 32px;
     padding: 0
-    
+
 }
 .header-btn.header-boards{
     padding-left: 26px;
@@ -124,7 +125,7 @@ a{
     margin-left: 10px;
 }
 .header-btn-icon{
-    
+
 
     position:absolute;
     top:10%;
@@ -196,26 +197,26 @@ input[type=text].header-search-input {
 
 */
 .containerdescription{
-   
+
     margin:0 auto 0 auto;
     padding-top:35px;
     width:60%;
-    
-   
+
+
     overflow: hidden;
 }
 
 #description{
-   
-    margin:auto; 
+
+    margin:auto;
     padding:0;
     background: #f5f6f7;
     color:black;
     text-align: center;
-    
-    
 
-    
+
+
+
 }
 .profile_shape{
     margin:0;
@@ -227,12 +228,12 @@ input[type=text].header-search-input {
     height:100px;
 }
 .profile_pic{
-   
+
     width:100%;
     height:100%;
     margin:0;
-    
-    
+
+
 }
 .profile_shape:hover .change_profile{
     display: block;
@@ -241,21 +242,21 @@ input[type=text].header-search-input {
     text-transform: uppercase;
     color: black;
     font-size:20px;
-    
-  
+
+
 }
 .profile_shape:hover{
     background: lightblue;
     text-transform: uppercase;
-    
+
     transition: ease-out;
     transition-duration: 0.4s;
-    
-    
+
+
 }
 .change_profile{
     display:none;
-    
+
 }
 
 .username{
@@ -269,7 +270,7 @@ input[type=text].header-search-input {
     margin-left:15px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
-    
+
 }
 .username p{
     float:left;
@@ -277,11 +278,11 @@ input[type=text].header-search-input {
     margin-left:7.5px;
     padding-left: 7.5px;
     margin-top:5px;
-    
+
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
-    
-    
+
+
+
 }
 
 .edit_profile{
@@ -292,13 +293,13 @@ input[type=text].header-search-input {
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
- 
+
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px;
-  
-  
+
+
 }
 .edit_profile:hover {
     background-color: #e7e7e7;
@@ -318,10 +319,10 @@ input[type=text].header-search-input {
     text-transform: uppercase;
 }
 #description nav li{
-    
+
     display: inline-block;
     padding:10px 20px 10px 20px;
-    
+
     margin-right:10px;
     background: rgb(191, 229, 241);
     box-shadow: 0px 10px 6px 0 rgba(0,0,0,0.24), 0px 7px 8px 0px rgba(0,0,0,0.19);
@@ -329,7 +330,7 @@ input[type=text].header-search-input {
     }
 .edit_profile{
     margin:0 0 15px 15px;
-    
+
     padding:0;
     float:left;
     border:1px solid #35424a;
@@ -341,8 +342,8 @@ input[type=text].header-search-input {
     height:20%;
     margin:0 0 0 10px;
     padding: 0;
-    
-    
+
+
 }
 
 
@@ -361,7 +362,7 @@ input[type=text].header-search-input {
     font-size:18px;
     background-color: #ffe6e6;
     border-radius: 10px;
-    
+
 }
 #head h1{
     text-align: center;
@@ -375,13 +376,30 @@ input[type=text].header-search-input {
     padding-right: 20%;
     padding-bottom: 30px;
 }
+#requested{
+    background: #dbe3ee;
+    border-collapse: collapse;
+    width: 100%;
+}
+#requested th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+
+}
+
+#requested tr:first-child{
+
+    background: #b55d5c;
+    color: white;
+}
 #student_list{
     background: white;;
     margin:0px;
     padding: 0px;
     min-height: 400px;
     padding-top: 50px;
-    
+
 }
 #students{
     background: #dbe3ee;
@@ -406,11 +424,11 @@ input[type=text].header-search-input {
     text-transform: uppercase;
 }
 #students tr:first-child{
-  
+
     background: #b55d5c;
 }
 #students tr:first-child th{
-  
+
     color: #dbe3ee;
     text-transform: uppercase;
     font-weight: bold;
@@ -427,7 +445,7 @@ input[type=text].header-search-input {
 
 */
 footer{
-    
+
     margin-bottom: 0;
     margin-top: 50px;
     width:100%;
@@ -436,7 +454,7 @@ footer{
     text-align: center;
     background-color: #ccd9ff;
     color: black;
-    
+
 }
 /*############################################################################################################################################################################
 ##############################################################################################################################################################################
@@ -449,17 +467,17 @@ footer{
     /* For mobile phones: */
     .containerdescription{
         width:100%;
-        
+
     }
-    
-    
+
+
   }
   @media only screen and (max-width: 626px) {
     /* For mobile phones: */
     .profile_shape{
         float:none;
-        
-        
+
+
     }
     .username h1{
         display:none;
@@ -467,25 +485,26 @@ footer{
     .username{
         float:none;
     }
-   
+
     .username p{
         margin:auto;
         float:none;
         padding: 0;
     }
+
     .edit_profile{
         float:none;
         margin:auto;
     }
-    
-    
+
+
   }
-  
+
   @media only screen and (max-width: 450px) {
     /* For mobile phones: */
-   
-    
-    
+
+
+
   }
   @media only screen and (max-width: 750px){
     .header-btn.header-boards {
@@ -499,10 +518,9 @@ footer{
     }
     .header-info{
         display: none !important;
-    }   
+    }
     #header .header-search{
         display: none;
     }
-    
+
     }
-    

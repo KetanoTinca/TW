@@ -29,30 +29,30 @@
                                       <li><a href=\"settings.php\">Profile</a></li>
                                       <li><a href=\"requests.php\">Requests</a></li>
                                       <li><a href=\"add-theme.php\">Add Theme</a></li>";
-                        }else{
-                            if( basename($_SERVER['PHP_SELF'])== 'cards.php'){
+                        }else if( basename($_SERVER['PHP_SELF'])== 'cards.php'){
                                 echo "  <li  ><a href=\"user.php\">Newsfeed</a></li>
                                         <li style=\"background:white;\"><a href=\"cards.php\">Students</a></li>
                                         <li><a href=\"settings.php\">Profile</a></li>
                                         <li><a href=\"requests.php\">Requests</a></li>
                                         <li><a href=\"add-theme.php\">Add Theme</a></li>";
-                            }else {
-                                if (basename($_SERVER['PHP_SELF']) == 'settings.php') {
+                        }else if(basename($_SERVER['PHP_SELF']) == 'settings.php') {
                                     echo "<li  ><a href=\"user.php\">Newsfeed</a></li>
                                             <li ><a href=\"cards.php\">Students</a></li>
                                             <li style=\"background:white;\"><a href=\"settings.php\">Profile</a></li>
                                             <li><a href=\"requests.php\">Requests</a></li>
                                             <li><a href=\"add-theme.php\">Add Theme</a></li>";
-                                } else {
-                                    if (basename($_SERVER['PHP_SELF']) == 'add-theme.php') {
+                        } else if (basename($_SERVER['PHP_SELF']) == 'add-theme.php') {
                                         echo "<li  ><a href=\"user.php\">Newsfeed</a></li>
                                             <li ><a href=\"cards.php\">Students</a></li>
                                             <li><a href=\"settings.php\">Profile</a></li>
                                             <li><a href=\"requests.php\">Requests</a></li>
                                             <li style=\"background:white;\"><a href=\"add-theme.php\"><a href=\"add-theme.php\">Add Theme</a></li>";
-                                    }
-                                }
-                            }
+                        } else if (basename($_SERVER['PHP_SELF']) == 'requests.php') {
+                            echo "<li><a href=\"user.php\">Newsfeed</a></li>
+                                  <li ><a href=\"cards.php\">Students</a></li>
+                                  <li><a href=\"settings.php\">Profile</a></li>
+                                  <li style=\"background:white;\"><a href=\"requests.php\">Requests</a></li>
+                                  <li><a href=\"add-theme.php\"><a href=\"add-theme.php\">Add Theme</a></li>";
                         }
                         ?>
                     </ul>

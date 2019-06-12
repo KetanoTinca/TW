@@ -7,7 +7,7 @@
     <meta name="keywords" content="web application, faculty, thesis, licence, education">
     <meta name="author" content="Birleanu Andrei-Cristian, Mihai Elena Sorina, Tinca Ketano-Leonard, Velicescu Laura">
     <title>AcaTisM | Profile </title>
-    <link rel="stylesheet" href="../CSS/application_form.css">
+    <link rel="stylesheet" href="../CSS/application_form.css?version=3">
 </head>
 
 <body>
@@ -19,9 +19,11 @@
     <a href="#">Log Out</a>
 </div>
 
-<div class="header">
+<div class="header" >
+    <div id="image-header">
     <h1>Subject's Title</h1>
     <p>Read about the Thesis' Theme and Apply.</p>
+    </div>
 </div>
 
 
@@ -29,10 +31,11 @@
     <div class="side">
         <h2>Apply</h2>
         <h5>Press the button, or go back to apply for another subject.</h5>
-        <div>
-            <form>
-
-            </form>
+        <p>Student: </p>
+        <p>Year: </p>
+        <p>Grade: </p>
+        <div class="button_wrapper">
+            <button class="small_button" id="cancel_button">Apply</button>
         </div>
     </div>
     <div class="main">
@@ -43,11 +46,11 @@
         <h3>Academic Year</h3>
         <p>2019-2020</p>
     </div>
+    <div class="footer">
+        <p>AcaTisM App, Copyright &copy; 2019</p>
+    </div>
 </div>
 
-<div class="footer">
-    <p>AcaTisM App, Copyright &copy; 2019</p>
-</div>
 
 </body>
 </html>

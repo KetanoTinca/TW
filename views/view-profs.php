@@ -8,7 +8,7 @@
     <meta name="keywords" content="web application, faculty, thesis, licence, education">
     <meta name="author" content="Birleanu Andrei-Cristian, Mihai Elena Sorina, Tinca Ketano-Leonard, Velicescu Laura">
     <title>AcaTisM | View Teachers! </title>
-    <link rel="stylesheet" href="../CSS/style_view_profs.css?version=7">
+    <link rel="stylesheet" href="../CSS/style_view_profs.css?version=8">
 </head>
 
 <body>
@@ -45,35 +45,35 @@
                     <th>Name, Surname</th>
                     <th><a href="./form.html">Subject1</a></th>
                     <th><button class="small_button"
-                            onclick="location.href='./form.php'">Apply</button>
+                            onclick="location.href='./application-form.php'">Apply</button>
                     </th>
                 </tr>
                 <tr>
                     <th>Name, Surname</th>
                     <th><a href="./form.html">Subject2</a></th>
                     <th><button class="small_button"
-                            onclick="location.href='./form.php'">Apply</button>
+                            onclick="location.href='./application-form.php'">Apply</button>
                     </th>
                 </tr>
                 <tr>
                     <th>Name, Surname</th>
                     <th><a href="./teacher-descriptions/name-surname">Subject3</a></th>
                     <th><button class="small_button"
-                            onclick="location.href='./form.php'">Apply</button>
+                            onclick="location.href='./application-form.php'">Apply</button>
                     </th>
                 </tr>
                 <tr>
                     <th>Name, Surname</th>
                     <th><a href="./form.html">Subject4</a></th>
                     <th><button class="small_button"
-                            onclick="location.href='./form.php'">Apply</button>
+                            onclick="location.href='./application-form.php'">Apply</button>
                     </th>
                 </tr>
                 <tr>
                     <th>Name, Surname</th>
                     <th><a href="./form.html">Subject5</a></th>
                     <th><button class="small_button"
-                            onclick="location.href='./form.php'">Apply</button>
+                            onclick="location.href='./application-form.php'">Apply</button>
                     </th>
                 </tr>
             </table>

@@ -99,6 +99,7 @@ a {
 
 
 /*Table*/
+
 #description{
     padding: 0px;
     margin: 0px;
@@ -272,7 +273,7 @@ footer{
 }
 
 #logged_message {
-    padding-left: 10px;
+    padding-left: 30px;
     color: #dbe3ee;
     font-size: 20px;
 }
