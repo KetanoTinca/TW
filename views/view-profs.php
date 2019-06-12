@@ -18,8 +18,9 @@
     include '../controller/session.php';
     if(isset($_SESSION['userType'])){
 
-        echo "<h1> Hello " . $_SESSION['userType'] . "</h1>";
+        echo "<h1> Hello " . $_COOKIE['username'] . "</h1>";
     }
+
 
     ?>
 

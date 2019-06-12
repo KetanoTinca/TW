@@ -111,9 +111,15 @@ include_once '../classes/crypt.php';
            // echo $pass;
             if($_POST['userType'] == "student"){
                 $userType = 1;
+                $git = trim($_POST['gitRepo']);
+                $aGrade = trim($_POST['averageGrade']);
+                $studyYear = trim($_POST['studyYear']);
             }else{
                 $userType = 0;
+                $degree = trim($_POST['degree']);
+                $web=trim($_POST['teacherWebSite']);
             }
+            echo $degree . ' ' . $web;
             echo $userType;
             echo "<br>";
 
@@ -138,18 +144,15 @@ include_once '../classes/crypt.php';
                 $status=0;
 
                 $sql = "INSERT INTO user VALUES (NULL, :username, :password, :userType, :firstName, :lastName, :email , null, null )";
-                //$sql = "INSERT INTO user VALUES (NULL,'" . $username . "','" . $pass . "'," . $userType . ",'" . $firstName . "','" . $lastName . "','" . $email . "')";
                 echo $sql;
                 echo "<br>";
                 if($userType == 1){
-                    $sql2 = "INSERT INTO student (user_fk) VALUES ((SELECT id FROM user WHERE username like :username AND pass like :password))";
-                    //$sql2 = "INSERT INTO student (user_fk) VALUES (select id from user where username like '" . $username . "' and pass like '" . $pass . "')";
+                    $sql2 = "INSERT INTO student  VALUES (NULL, :studyYear, :git, :averageGrade, 0, (SELECT id FROM user WHERE username like :username AND pass like :password))";
                 }
                 else
                 {
-                    $sql2 = "INSERT INTO teacher (user_fk) VALUES ((SELECT id FROM user WHERE username like :username AND pass like :password))";
+                    $sql2 = "INSERT INTO teacher  VALUES (NULL, :degree, :web, (SELECT id FROM user WHERE username like :username AND pass like :password))";
 
-                    //$sql2 = "INSERT INTO teacher (user_fk) VALUES (select id from user where username like '" . $username . "' and pass like '" . $pass . "')";
                 }
                 echo $sql . "<br> " . $sql2;
                 echo "<br>";
@@ -174,11 +177,30 @@ include_once '../classes/crypt.php';
                 echo $data . "<Br>";
                 if($stmt = $this->_db->prepare($sql2))
                 {
-                    $stmt->bindParam(":username", $username, PDO::PARAM_STR);
-                    $stmt->bindParam(":password", $pass, PDO::PARAM_STR);
-                    $stmt->execute();
-                    $stmt->closeCursor();
-                    $status=$status+1;
+                   if(!$userType){
+                       echo "here";
+                       $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+                       $stmt->bindParam(":password", $pass, PDO::PARAM_STR);
+                       $stmt->bindParam(":degree", $degree, PDO::PARAM_STR);
+                       $stmt->bindParam(":web", $web, PDO::PARAM_STR);
+                       $stmt->execute();
+                       $stmt->closeCursor();
+                       $status=$status+1;
+
+                   }else{
+                       echo "here2";
+                       echo $studyYear . ' ' . $git . ' ' . $aGrade;
+                       $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+                       $stmt->bindParam(":password", $pass, PDO::PARAM_STR);
+                       $stmt->bindParam(":studyYear", $studyYear, PDO::PARAM_INT);
+                       $stmt->bindParam(":git", $git, PDO::PARAM_STR);
+                       $stmt->bindParam(":averageGrade", $aGrade, PDO::PARAM_STR);
+                       $stmt->execute();
+                       $stmt->closeCursor();
+                       $status=$status+1;
+                   }
+
+
 
                 }
                 else

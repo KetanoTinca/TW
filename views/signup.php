@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../CSS/signup.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-
+        <script src="../javascript/register_validation.js"></script>
     </head>
 
     <body class="page-signup">
@@ -18,7 +18,7 @@
 
                     <div id="signup-password" class="quick-switch">
                         <div class="info-message hidden"></div>
-                        <h1>Create an Account</h1> <span class="sign-in-account">or <a href="login.html">sign in to your
+                        <h1>Create an Account</h1> <span class="sign-in-account">or <a href="login.php">sign in to your
                                 account</a></span>
                         <div class="sign-up-container">
                             <?php
@@ -29,22 +29,43 @@
 
                             <form method="post" action="../controller/signup.php">
                                 <label for="firstName">First Name</label>
-                                <input type="text" name="firstName" id="firstName" autofocus>
+                                <input type="text" name="firstName" id="firstName" autofocus required>
                                 <label for="lastName">Last Name</label>
-                                <input type="text" name="lastName" id="lastName">
+                                <input type="text" name="lastName" id="lastName" required>
                                 <label for="email">Email</label>
-                                <input type="email" name="email" id="email">
+                                <input type="email" name="email" id="email" required>
                                 <label for="userName">Username</label>
-                                <input type="text" name="userName" id="userName">
+                                <input type="text" name="userName" id="userName" onchange='check_username();' required>
+                                <span id='messageU'></span>
                                 <label for="password">Password</label>
-                                <input type="password" name="password" id="password" tabindex="0" placeholder="e.g., ••••••••••••">
+                                <input type="password" name="password" id="password" tabindex="0" placeholder="e.g., ••••••••••••" onchange='check_pass();' required>
                                 <label for="confirmPassword">Confirm Password</label>
-                                <input type="password" name="confirmPassword" id="confirmPassword" tabindex="0" placeholder="e.g., ••••••••••••">
+                                <input type="password" name="confirmPassword" id="confirmPassword" tabindex="0" placeholder="e.g., ••••••••••••" onchange='check_pass();' required>
+                                <span id='message'></span>
                                 <label for="userType">User Type</label>
-                                <select id="userType" name="userType">
+                                <select id="userType" name="userType" onchange='change_status()'>
                                     <option value="teacher">Teacher</option>
                                     <option value="student">Student</option>
                                 </select>
+
+
+                                <div id="student" style="display: none;">
+
+                                    <label for="studyYear">Study Year</label>
+                                    <input type="number" name="studyYear" id="studyYear"  min="1" max="3" >
+                                    <label for="git">Git Repo</label>
+                                    <input type="text" name="gitRepo" id="gitRepo" >
+                                    <label for="averageGrade">Average Grade</label>
+                                    <input type="text" name="averageGrade" id="averageGrade" >
+                                </div>
+                                <div id="teacher" style="display: block;">
+                                    <label for="degree">Degree</label>
+                                    <input type="text" name="degree" id="degree" >
+                                    <label for="web">Your WebSite</label>
+                                    <input type="text" name="teacherWebSite" id="teacherWebSite"  >
+                                    <span id='messageURL'></span>
+
+                                </div>
                                 <input id="signup" tabindex="0" type="submit" class="button button-green" value="Sign Up">
 
                             </form>
