@@ -43,10 +43,12 @@
                                 <input type="password" name="confirmPassword" id="confirmPassword" tabindex="0" placeholder="e.g., ••••••••••••" onchange='check_pass();' required>
                                 <span id='message'></span>
                                 <label for="userType">User Type</label>
-                                <select id="userType" name="userType" onchange='change_status()'>
-                                    <option value="teacher">Teacher</option>
-                                    <option value="student">Student</option>
-                                </select>
+                                <div class="custom-select">
+                                     <select id="userType" name="userType" onchange='change_status()'>
+                                          <option value="teacher">Teacher</option>
+                                          <option value="student">Student</option>
+                                     </select>
+                                </div>
 
 
                                 <div id="student" style="display: none;">

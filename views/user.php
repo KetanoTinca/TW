@@ -34,13 +34,7 @@
     <?php include 'navbar.php';?>
 
     <?php include 'user.description.php';?>
-    <?php
 
-
-
-
-
-    ?>
            <div class="container" style="background-color: white;">
                 <div class="text" >
                     <h1>Timeline</h1>
