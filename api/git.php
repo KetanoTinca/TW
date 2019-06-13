@@ -16,9 +16,9 @@ header('Content-Type: application/json');
 	
     $fullRepoData = $api->decode($response_prog);
  
-	$user=$fullRepoData[count($fullRepoData)-1]->author->login;
-	$commit = $fullRepoData[count($fullRepoData)-1]->commit->message;
-	$date = $fullRepoData[count($fullRepoData)-1]->commit->author->date;
+	$user=$fullRepoData[0]->author->login;
+	$commit = $fullRepoData[0]->commit->message;
+	$date = $fullRepoData[0]->commit->author->date;
 	$githubData['commit']=$commit;
 	$githubData['user']=$user;
 	$githubData['date']	=$date;
