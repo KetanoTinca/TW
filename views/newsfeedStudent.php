@@ -17,7 +17,7 @@ where s.id = :student_id order by p.postDate desc";
             //  echo "<li>".$row['taskDescription']." with deadline ".$row['deadline']."</li>";
             echo "<p>Title: " . $row[1] . "</p>";
             echo "<p>" . $row[2] . " Postat la data : " . $row[3] . "</p>";
-            
+
 
 
         }
