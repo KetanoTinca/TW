@@ -20,8 +20,8 @@
 
 <section id="student_list">
     <div id="head">
-        <h1>Follow your students' progress!</h1>
-        <p>You can see here the name of the students enrolled in one of your projects, as well as the name of the project and its status. You also can take a look at their boards, to add tasks and see what they've submitted so far.</p>
+        <h1>Thesis Requests</h1>
+        <p>Choose or decline students that want to work on your proposed thesis!</p>
     </div>
     <table id="requested">
         <tr>

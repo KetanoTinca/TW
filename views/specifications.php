@@ -1,26 +1,5 @@
 <?php include  "../classes/Database.php"; ?>
 <?php
-function getThesisName($themeId){
-
-    $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME;
-    $db = new PDO($dsn, DB_USER, DB_PASS);
-    $sql="SELECT themeName FROM theme where id=:themeId";
-
-    try{
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':themeId', $themeId, PDO::PARAM_INT);
-        $stmt->execute();
-        $result = $stmt->fetch();
-        return $result[0];
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-        return null;
-    }
-
-    return null;
-
-}
-
 function getThesisInfo($studentId) {
     $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME;
     $db = new PDO($dsn, DB_USER, DB_PASS);
