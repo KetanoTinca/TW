@@ -14,11 +14,12 @@
   <div class="ui">
     <?php include 'navbar.php'; ?>
     <?php
-    if (isset($_GET['board'])){
-        
+
+    if (!(isset($_GET['board']))){
+      header("Location: progress.php?board=0", true, 301);
     }
-    else
-     header("Location: progress.php?board=1", true, 301);
+    
+     
      // change board id
 
    
@@ -68,7 +69,9 @@
           include_once "../classes/Database.php";
           if (isset($_GET['board'])) {
             $board = new Board($db);
-            echo $board->getInProgress($_GET['board']);
+            $boardId = $board->getBoardId($_SESSION['student_id']);
+            echo $boardId;
+            echo $board->getInProgress($boardId);
             }
           ?>
         </ul>
