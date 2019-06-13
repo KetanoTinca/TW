@@ -25,14 +25,17 @@ function getThesisInfo($studentId) {
     $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME;
     $db = new PDO($dsn, DB_USER, DB_PASS);
     $sql="SELECT theme.themeName as themeName, concat(user.firstName, user.lastName) as name, theme.description as description, theme.academicYear as year FROM board 
-            JOIN theme on board.theme_fk=theme.id JOIN teacher on teacher.id=theme.teacher_fk JOIN user on user.teacher_fk=teacher.id where board.student_fk=:studentId;";
+            JOIN theme on board.theme_fk=theme.id JOIN teacher on teacher.id=theme.teacher_fk JOIN user on user.id=teacher.id where board.student_fk=:studentId and user.userType=0";
 
     try{
         $stmt = $db->prepare($sql);
-        $stmt->bindParam(':themeId', $themeId, PDO::PARAM_INT);
+        $stmt->bindParam(':studentId', $studentId, PDO::PARAM_INT);
         $stmt->execute();
         $result = $stmt->fetch();
-        return $result[0];
+        echo "<h3>$result[0]</h3>
+              <p><strong>Teacher</strong>: $result[1]</p>
+              <p><strong>Description</strong>: $result[2]</p>
+              <p><strong>Academic Year</strong>:$result[3]</p>";
     } catch (PDOException $e) {
         echo $e->getMessage();
         return null;
@@ -68,11 +71,8 @@ function getThesisInfo($studentId) {
                 <h1>Specifications:</h1>
             </div>
                 <?php
-                echo "<div>" . getThesisInfo($_SESSION['studentId']). "</div>";
+                echo "<div>" . getThesisInfo($_SESSION['student_id']). "</div>";
                 ?>
-
-
-            <p>Posted at:</p>
         </div>
 
     </div>
