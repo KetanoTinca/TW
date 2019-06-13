@@ -9,10 +9,12 @@ header('Content-Type: application/json');
         'user' => [],
         'contributors' => []
     ];
-
+	
     $token = new Milo\Github\OAuth\Token('53a6f48879643de6ecad91aa0a38ec3a48a3558e');
-    $api->setToken($token);
-    $response_prog = $api->get('/repos/:owner/:repo', ['owner' => 'KetanoTinca', 'repo' =>'TW']);
+	$api->setToken($token);
+
+	$response_prog = $api->get('/repos/:owner/:repo', ['owner' => 'KetanoTinca', 'repo' => 'TW']);
+	
     $fullRepoData = $api->decode($response_prog);
  
 	
@@ -27,7 +29,8 @@ header('Content-Type: application/json');
  		'fork_count' => $fullRepoData->forks,
  		'watchers_count' => $fullRepoData->subscribers_count,
  		'owner_id' =>$fullRepoData->owner->id
-     ];
+	 ];
+	 
      $owner = $fullRepoData->owner;
      	$user = [
      		'login' => $owner->login,

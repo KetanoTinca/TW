@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -12,6 +13,16 @@
 <body>
   <div class="ui">
     <?php include 'navbar.php'; ?>
+    <?php
+    if (isset($_GET['board'])){
+        
+    }
+    else
+     header("Location: progress.php?board=1", true, 301);
+     // change board id
+
+   
+?>
 
     <nav class="navbar board">
       <?php include_once "../classes/board.php";
@@ -106,6 +117,12 @@
       </div>
 
     </div>
+    <nav class="navbar board">
+    <?php
+      foreach ($_SESSION as $i)
+      echo $i;
+    ?>
+    </nav>
   </div>
 
 </body>

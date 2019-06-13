@@ -50,6 +50,7 @@ class Board{
                     {   echo   "<form action=\"./progress.php\" method=\"get\">";
                         echo  "<button name=\"plus\" value=\"".$row['id']."\" type=\"submit\">+</button>";
                         echo "<li>".$row['title']." with deadline ".$row['deadline']."</li>";
+                        echo "</form>";
                        
                        
                     }
@@ -69,6 +70,7 @@ class Board{
                         echo   "<form action=\"./progress.php\" method=\"get\">";
                         echo  "<button name=\"plus\" value=\"".$row['id']."\" type=\"submit\">+</button>";
                         echo "<li>".$row['title']." with deadline ".$row['deadline']."</li>";
+                        echo "</form>";
                     }
     
     
@@ -86,6 +88,7 @@ class Board{
                         echo   "<form action=\"./progress.php\" method=\"get\">";
                         echo  "<button name=\"plus\" value=\"".$row['id']."\" type=\"submit\">+</button>";
                         echo "<li>".$row['title']." with deadline ".$row['deadline']."</li>";
+                        echo "</form>";
                     }
     
     
