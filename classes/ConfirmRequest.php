@@ -39,7 +39,7 @@ class ConfirmRequest
                         <th>" . $row['email'] . "</th>
                         <th>" . $row['syear'] . "</th>
                         <th><button type='submit' name='accept' value=". $row['requestId'] . " class=\"small_button\">Accept</button></th>
-                        <th><button class=\"decline_button\">Decline</button></th>
+                        <th><button type='submit' name='decline' value=". $row['requestId'] . " class=\"decline_button\">Decline</button></th>
                         </tr>";
 
             }
