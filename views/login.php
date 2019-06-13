@@ -33,7 +33,7 @@ Redirect('../views/view-profs.php', false);
                 <div id="signup-password" class="quick-switch">
                     <div class="info-message hidden"></div>
                     <h1>Sign In</h1>
-                    <span class="sign-in-account">or <a href="login.php">sign up to your
+                    <span class="sign-in-account">or <a href="signup.php">sign up to your
                                 account</a></span>
                     <div class="sign-up-container">
                     <form method = "post" action = "../controller/login.php">
