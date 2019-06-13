@@ -152,6 +152,23 @@ class Board{
 
         
     }
+
+    public function getLastCommit($owner,$repo){
+        define('URL', "localhost/TW/api/git.php/?owner=".$owner."&repo=".$repo);
+        $c = curl_init();
+        curl_setopt($c, CURLOPT_URL, URL);              // stabilim URL-ul serviciului
+        curl_setopt($c, CURLOPT_RETURNTRANSFER, true);  // rezultatul cererii va fi disponibil ca șir de caractere
+        curl_setopt($c, CURLOPT_SSL_VERIFYPEER, false); // nu verificam certificatul digital
+        $res = curl_exec($c);                           // executam cererea GET
+        curl_close($c);
+
+    // echo $res;
+
+
+    // // procesam rezultatul via DOM
+    $obj = json_decode($res);
+        echo "Latest Commit: Made by ". $obj->user." with the message " . $obj->commit . " on " . $obj->date ;
+    }
     
       
 }

@@ -119,8 +119,8 @@
     </div>
     <nav class="navbar board">
     <?php
-      foreach ($_SESSION as $i)
-      echo $i;
+     $board = new Board($db);
+     echo $board->getLastCommit("KetanoTinca","TW");
     ?>
     </nav>
   </div>
