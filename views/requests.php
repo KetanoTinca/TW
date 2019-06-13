@@ -8,7 +8,7 @@
     <meta name="keywords" content="web application, faculty, thesis, licence, education">
     <meta name="author" content="Birleanu Andrei-Cristian, Mihai Elena Sorina, Tinca Ketano-Leonard, Velicescu Laura">
     <title>AcaTisM | View Students </title>
-    <link rel="stylesheet" href="../CSS/style_view_studs.css?version=3">
+    <link rel="stylesheet" href="../CSS/style_view_studs.css?version=4">
 </head>
 <body>
 <header>
@@ -33,52 +33,14 @@
             <th>Accept</th>
             <th>Decline</th>
         </tr>
-        <tr>
-            <th>Birleanu, Andrei</th>
-            <th><p>Find my car</p></th>
-            <th>9,87</th>
-            <th>mail@gmail.com</th>
-            <th>2</th>
-            <th><button class="small_button">Accept</button></th>
-            <th><button class="small_button">Decline</button></th>
-        </tr>
-        <tr>
-            <th>Velicescu, Laura</th>
-            <th><p>Top Music</p></th>
-            <th>9,87</th>
-            <th>mail@gmail.com</th>
-            <th>2</th>
-            <th><button class="small_button">Accept</button></th>
-            <th><button class="small_button">Decline</button></th>
-        </tr>
-        <tr>
-            <th>Tinka Ketano</th>
-            <th><p>Just Dance for Mobile</p></th>
-            <th>9,87</th>
-            <th>mail@gmail.com</th>
-            <th>2</th>
-            <th><button class="small_button">Accept</button></th>
-            <th><button class="small_button">Decline</button></th>
-        </tr>
-        <tr>
-            <th>Mihai Sorina Elena</th>
-            <th><p>Photoshop v2.0</p></th>
-            <th>9,87</th>
-            <th>mail@gmail.com</th>
-            <th>2</th>
-            <th><button class="small_button">Accept</button></th>
-            <th><button class="small_button">Decline</button></th>
-        </tr>
-        <tr>
-            <th>Ionescu, Popescu</th>
-            <th><p>Linux translator</p></th>
-            <th>9,87</th>
-            <th>mail@gmail.com</th>
-            <th>2</th>
-            <th><button class="small_button">Accept</button></th>
-            <th><button class="small_button">Decline</button></th>
-        </tr>
+        <?php include_once "../classes/ConfirmRequest.php";
+        include_once "../classes/Database.php";
 
+        if (isset($_SESSION['teacher_id'])) {
+            $request = new ConfirmRequest(NULL,$_SESSION['teacher_id']);
+            echo $request->getRequest($_SESSION['teacher_id']);
+        }
+        ?>
     </table>
 </section>
 <footer>

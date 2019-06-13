@@ -138,9 +138,9 @@ function getThesisYear($themeId){
 
 
 <div class="navbar">
-    <a href="#">Homepage</a>
-    <a href="#">AcaTisM</a>
-    <a href="#">Log Out</a>
+    <a href="./view-profs.php">Homepage</a>
+    <a href="./view-profs.php">AcaTisM</a>
+    <a href='../classes/Database.php?action=logout'">Log Out</a>
 </div>
 
 <div class="header" >

@@ -50,8 +50,30 @@ h1{
     text-decoration: none;
     color: #dbe3ee;
 }
+
+.decline_button{
+    height:40px;
+    width: 100px;
+    background: #b55d5c;
+    border: none;
+
+    border-radius: 6px 6px 0 0 ;
+
+    font-size: 22px;
+    text-align: center;
+    text-decoration: none;
+    color: #dbe3ee;
+}
+
 .small_button:hover{
-    background: #cf9090;
+    background: #1b61FF;
+    box-shadow: 0px 10px 6px 0 rgba(0,0,0,0.24), 0px 7px 8px 0px rgba(0,0,0,0.19);
+    height:45px;
+    width: 105px;
+}
+
+.decline_button:hover{
+    background: #b55d8F;
     box-shadow: 0px 10px 6px 0 rgba(0,0,0,0.24), 0px 7px 8px 0px rgba(0,0,0,0.19);
     height:45px;
     width: 105px;
