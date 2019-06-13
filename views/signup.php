@@ -23,7 +23,7 @@
                         <div class="sign-up-container">
                             <?php
                             if (isset($_GET['status']) && $_GET['status'] == 'wrong1') {
-                                echo "<p>Smth went wrong motherfucker</p>";
+                                echo "<p>Smth went wrong try again</p>";
                             }
                             ?>
 
