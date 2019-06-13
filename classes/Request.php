@@ -26,7 +26,7 @@ class Request{
         try{
             $sql = "INSERT INTO request VALUES (NULL, :student, :theme, :status)";
 
-            echo $sql;
+           
             if($stmt = $this->_db->prepare($sql))
             {
                 echo $this->student_Fk;
