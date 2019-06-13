@@ -42,6 +42,9 @@
             if(isset($_GET['accept'])&& !(empty($_GET['accept']))){
                 $request->acceptRequest($_GET['accept']);
             }
+            else if (isset($_GET['decline']) && !(empty($_GET['decline']))){
+                $request->declineRequest($_GET['decline']);
+            }
         }
 
         ?>

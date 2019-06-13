@@ -86,9 +86,8 @@ class ConfirmRequest
 
     public function declineRequest($requestId){
 
-        $sql="DELETE FROM request WHERE student_fk=:studentId AND id=:requestId;";
+        $sql="DELETE FROM request WHERE id=:requestId;";
         if ($stmt = $this->_db->prepare($sql)) {
-            $stmt->bindParam(":studentId", $studentId, PDO::PARAM_INT);
             $stmt->bindParam(":requestId", $requestId, PDO::PARAM_INT);
             $stmt->execute();
         }
