@@ -31,7 +31,7 @@ include_once '../classes/crypt.php';
                 	AND pass=:pass
                        LIMIT 1";
 
-            echo $sql;
+            //echo $sql;
             try {
                 $stmt = $this->_db->prepare($sql);
                 $pass_enc = new Crypt((trim($_POST['password'])),'st');
