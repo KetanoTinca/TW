@@ -24,7 +24,13 @@
                 <?php
                 if ($_SESSION['userType'] == 'student') {
                     if (basename($_SERVER['PHP_SELF']) == 'user.php') {
-                        echo "<li  style=\"background:white;\"><a href=\"user.php\">Newsfeed</a></li>";
+                        echo "<li  style=\"background:white;\"><a href=\"user.php\">Newsfeed</a></li>
+                              <li><a href=\"specifications.php\">Thesis Specifications</a></li>";
+                    } else {
+                        if (basename($_SERVER['PHP_SELF']) == 'specifications.php') {
+                            echo "<li><a href=\"user.php\">Newsfeed</a></li>
+                              <li  style=\"background:white;\"><a href=\"specifications.php\">Thesis Specifications</a></li>";
+                        }
                     }
 
                 } else {

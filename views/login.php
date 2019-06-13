@@ -33,6 +33,8 @@ Redirect('../views/view-profs.php', false);
                 <div id="signup-password" class="quick-switch">
                     <div class="info-message hidden"></div>
                     <h1>Sign In</h1>
+                    <span class="sign-in-account">or <a href="login.php">sign up to your
+                                account</a></span>
                     <div class="sign-up-container">
                     <form method = "post" action = "../controller/login.php">
                         <?php if(isset($_GET['status']) && $_GET['status'] == 'wrong'  ){
@@ -65,7 +67,7 @@ Redirect('../views/view-profs.php', false);
                         ?>
 
 
-                        <label>Click <a href="#">here</a> to recover password</label>
+
                     </form>
                     </div>
                 </div>
