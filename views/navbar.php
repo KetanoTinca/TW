@@ -24,7 +24,7 @@
                   
                     <a class="header-btn header-avatar js-open-header-member-menu" href="./user.php" aria-label="Open Member Menu">
     
-                        <span class="member-initials" title="Tinca Ketano (tincaketano)">PF</span>
+                        <span class="member-initials" ><?php echo substr($_SESSION['firstName'],0,1) . substr($_SESSION['lastName'],0,1);?></span>
                     </a>
                 </div>
             </nav>

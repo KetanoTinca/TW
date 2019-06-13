@@ -9,6 +9,8 @@
     <meta name="author" content="Birleanu Andrei-Cristian, Mihai Elena Sorina, Tinca Ketano-Leonard, Velicescu Laura">
     <title>AcaTisM | View Teachers! </title>
     <link rel="stylesheet" href="../CSS/style_view_profs.css?version=8">
+    <link rel="stylesheet" href="../CSS/tooltipandmodal.css">
+    <script src="../javascript/modal.js"></script>
 </head>
 
 <body>
@@ -22,9 +24,10 @@
             die();
         }
 
-        include 'navbar.php';
+
         include '../classes/Database.php';
         include '../controller/session.php';
+        include 'navbar.php';
         if (isset($_SESSION['userType']) && $_SESSION['userType'] == 'student') {
 
             include 'choose_prof.php';
