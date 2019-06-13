@@ -17,28 +17,32 @@ class Board{
 			}
         }
         
-    public function getPercent(){
+    public function getPercent($boardFk){
             $all = 0;
             $done = 0;
-            $sql = 'select count(*) from task';
-            $sql2= 'select count(*) from task where status=3';
+            $sql = 'select count(*) from task where board_fk=:boardId';
+            $sql2= 'select count(*) from task where board_fk=:boardId and status=3';
 
             if($stmt = $this->_db->prepare($sql)){
+                $stmt->bindParam(":boardId", $boardFk, PDO::PARAM_INT);
                 $stmt->execute();
                 $row = $stmt->fetch();
                 $all = $row[0];
             }
             if($stmt = $this->_db->prepare($sql2)){
+                $stmt->bindParam(":boardId", $boardFk, PDO::PARAM_INT);
                 $stmt->execute();
                 $row = $stmt->fetch();
                 $done = $row[0];
             }
+           
             if($all == 0){
             $percent = 0;
             }else{
             $percent = round(($done * 100 / $all),2);
             }
             echo "<th>" . $percent . "% </th>";
+            
     }    
 
     public function getToDo($boardID){
