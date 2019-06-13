@@ -20,15 +20,11 @@
                     <a class="header-btn" href="./progress.php " title="Create a project">
                         <img class="header-btn-icon" src="../img/plus.png" alt="+">
                     </a>
-                    <a class="header-btn header-info" aria-label="Open info menu">
-                        <img class="header-btn-icon" src="../img/info.png" alt="i">
-                    </a>
-                    <a class="header-btn header-notifications other-notifications" href="#" aria-label="Notifications">
-                            <img class="header-btn-icon" src="../img/notification.png" alt="N">
-                    </a>
+                    
+                  
                     <a class="header-btn header-avatar js-open-header-member-menu" href="./user.php" aria-label="Open Member Menu">
     
-                        <span class="member-initials" title="Tinca Ketano (tincaketano)">TK</span>
+                        <span class="member-initials" title="Tinca Ketano (tincaketano)">PF</span>
                     </a>
                 </div>
             </nav>

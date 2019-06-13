@@ -154,6 +154,7 @@ class Board{
     }
 
     public function getLastCommit($owner,$repo){
+
         define('URL', "localhost/TW/api/git.php/?owner=".$owner."&repo=".$repo);
         $c = curl_init();
         curl_setopt($c, CURLOPT_URL, URL);              // stabilim URL-ul serviciului
@@ -169,8 +170,20 @@ class Board{
     $obj = json_decode($res);
         echo "Latest Commit: Made by ". $obj->user." with the message " . $obj->commit . " on " . $obj->date ;
     }
-    
+
+    public function getBoardId($studentFK){
+
+        $sql = "Select board_fk from student where id=:studentID";
+        if($stmt = $this->_db->prepare($sql)){
+            $stmt->bindParam(":studentID",$studentFK,PDO::PARAM_STR);
+            $stmt->execute();
+            $row= $stmt->fetch();
+            return $row[0];
+        }
+
+    }
       
 }
+
 
 ?>
