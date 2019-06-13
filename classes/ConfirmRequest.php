@@ -47,8 +47,7 @@ class ConfirmRequest
     }
 
     public function acceptRequest($requestId){
-
-        $sql2 =" Select student_fk, theme_fk from request where id =:requestId";
+        $sql2 =" SELECT student_fk, theme_fk FROM request WHERE id =:requestId";
         if ($stmt = $this->_db->prepare($sql2)) {
             $stmt->bindParam(":requestId", $requestId, PDO::PARAM_INT);
             $stmt->execute();
@@ -62,10 +61,35 @@ class ConfirmRequest
             $stmt->bindParam(":theme_fk", $themeId, PDO::PARAM_INT);
             $stmt->execute();
         }
+        $sql="Select id from board where student_fk=:studentId;";
+        if ($stmt = $this->_db->prepare($sql)) {
+            $stmt->bindParam(":studentId", $studentId, PDO::PARAM_INT);
+            $stmt->execute();
+            $row=$stmt->fetch();
+            $boardId=$row[0];
+        }
+
+        $sql="UPDATE student SET board_fk=:boardId WHERE id=:studentId;";
+        if ($stmt = $this->_db->prepare($sql)) {
+            $stmt->bindParam(":boardId", $boardId, PDO::PARAM_INT);
+            $stmt->bindParam(":studentId", $studentId, PDO::PARAM_INT);
+            $stmt->execute();
+        }
 
         $sql="DELETE FROM request WHERE student_fk=:studentId;";
         if ($stmt = $this->_db->prepare($sql)) {
             $stmt->bindParam(":studentId", $studentId, PDO::PARAM_INT);
+            $stmt->execute();
+        }
+
+    }
+
+    public function declineRequest($requestId){
+
+        $sql="DELETE FROM request WHERE student_fk=:studentId AND id=:requestId;";
+        if ($stmt = $this->_db->prepare($sql)) {
+            $stmt->bindParam(":studentId", $studentId, PDO::PARAM_INT);
+            $stmt->bindParam(":requestId", $requestId, PDO::PARAM_INT);
             $stmt->execute();
         }
 
