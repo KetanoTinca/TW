@@ -22,7 +22,8 @@ if( isset($_GET['status']) )
     include_once "../classes/board.php";
     include_once "../classes/Database.php";
       $board = new Board($db);
-      $board->postTask(1,$_GET['title'],$_GET['description'],$_GET['deadline'],$_GET['status']); 
+      $boardId = $board->getBoardId($_SESSION['student_id']);
+      $board->postTask($boardId,$_GET['title'],$_GET['description'],$_GET['deadline'],$_GET['status']); 
       header("Location: progress.php", true, 301);
     }
     

@@ -16,7 +16,12 @@
     <?php
 
     if (!(isset($_GET['board']))){
-      header("Location: progress.php?board=0", true, 301);
+      include_once "../classes/board.php";
+          include_once "../classes/Database.php";
+         
+            $board = new Board($db);
+            $boardId = $board->getBoardId($_SESSION['student_id']);
+      header("Location: progress.php?board=".$boardId, true, 301);
     }
     
      
@@ -30,7 +35,8 @@
           include_once "../classes/Database.php";
           if (isset($_GET['board'])) {
             $board = new Board($db);
-            echo $board->getTheme($_GET['board']);
+            $boardId = $board->getBoardId($_SESSION['student_id']);
+            echo $board->getTheme($boardId);
             }
           ?></nav>
     <div class="lists">
@@ -52,7 +58,8 @@
           include_once "../classes/Database.php";
           if (isset($_GET['board'])) {
           $board = new Board($db);
-          echo $board->getToDo($_GET['board']);
+          $boardId = $board->getBoardId($_SESSION['student_id']);
+          echo $board->getToDo($boardId);
           }
           ?>
         </ul>
@@ -70,7 +77,7 @@
           if (isset($_GET['board'])) {
             $board = new Board($db);
             $boardId = $board->getBoardId($_SESSION['student_id']);
-            echo $boardId;
+           
             echo $board->getInProgress($boardId);
             }
           ?>
@@ -89,7 +96,8 @@
           include_once "../classes/Database.php";
           if (isset($_GET['board'])) {
             $board = new Board($db);
-            echo $board->getFeedback($_GET['board']);
+            $boardId = $board->getBoardId($_SESSION['student_id']);
+            echo $board->getFeedback($boardId);
             }
           ?>
         </ul>
@@ -107,7 +115,8 @@
           include_once "../classes/Database.php";
           if (isset($_GET['board'])) {
             $board = new Board($db);
-            echo $board->getDone($_GET['board']);
+            $boardId = $board->getBoardId($_SESSION['student_id']);
+            echo $board->getDone($boardId);
             }
           ?>
         </ul>
@@ -123,7 +132,9 @@
     <nav class="navbar board">
     <?php
      $board = new Board($db);
-     echo $board->getLastCommit("KetanoTinca","TW");
+     $repo = $board->getRepo($_SESSION['student_id']);
+     $owner = $board->getOwner($_SESSION['student_id']);
+     echo $board->getLastCommit($owner,$repo);
     ?>
     </nav>
   </div>

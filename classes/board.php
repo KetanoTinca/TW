@@ -182,7 +182,34 @@ class Board{
         }
 
     }
-      
+
+    public function getRepo($studentFK){
+        $sql = "Select git from student where id=:studentID";
+        if($stmt = $this->_db->prepare($sql)){
+            $stmt->bindParam(":studentID",$studentFK,PDO::PARAM_STR);
+            $stmt->execute();
+            $row= $stmt->fetch();
+            return $row[0];
+        }
+
+    }
+
+    public function getOwner($studentFK){
+        $sql = "Select user_fk from student where id=:studentID";
+        if($stmt = $this->_db->prepare($sql)){
+            $stmt->bindParam(":studentID",$studentFK,PDO::PARAM_INT);
+            $stmt->execute();
+            $row= $stmt->fetch();
+            $sql = "Select username from user where id=:userID";
+            if($stmt = $this->_db->prepare($sql)){
+                $stmt->bindParam(":userID",$row[0],PDO::PARAM_INT);
+                $stmt->execute();
+                $row2= $stmt->fetch();
+                // return $row2[0];
+                return "KetanoTinca";
+        }
+    }
+    }
 }
 
 
