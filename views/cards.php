@@ -31,41 +31,17 @@
                         <th>Progress</th>
                         <th>Board</th>
                     </tr>
-                    <tr>
-                        <th>Birleanu, Andrei</th>
-                        <th><p>Find my car</p></th>
-                        <?php  include_once "../classes/board.php";
-                      include_once "../classes/Database.php";
-                        $board = new Board($db);
-                     echo $board->getPercent();
-                        ?>
-                        <th><button class="small_button" onclick="location.href='./progress.html'">Board</button></th>
-                    </tr>
-                    <tr>
-                        <th>Velicescu, Laura</th>
-                        <th><p>Top Music</p></th>
-                        <th>60%</th>
-                        <th><button class="small_button" onclick="location.href='./progress.html'">Board</button></th>
-                    </tr>
-                    <tr>
-                        <th>Tinka Ketano</th>
-                        <th><p>Just Dance for Mobile</p></th>
-                        <th>75%</th>
-                        <th><button class="small_button" onclick="location.href='./progress.html'">Board</button></th>
-                    </tr>
-                    <tr>
-                        <th>Mihai Sorina Elena</th>
-                        <th><p>Photoshop v2.0</p></th>
-                        <th>10%</th>
-                        <th><button class="small_button" onclick="location.href='./progress.html'">Board</button></th>
-                    </tr>
-                    <tr>
-                        <th>Ionescu, Popescu</th>
-                        <th><p>Linux translator</p></th>
-                        <th>33%</th>
-                        <th><button class="small_button" onclick="location.href='./progress.html'">Board</button></th>
-                    </tr>
                     
+                    <?php include_once "../classes/ConfirmRequest.php";
+                     include_once "../classes/Database.php";
+
+                if (isset($_SESSION['teacher_id'])) {
+                    $request = new ConfirmRequest(NULL,$_SESSION['teacher_id']);
+                    echo $request->getStudents($_SESSION['teacher_id']);
+           
+        }
+
+        ?>
                 </table>
         </section>
         <footer>

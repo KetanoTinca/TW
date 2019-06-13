@@ -93,4 +93,59 @@ class ConfirmRequest
         }
 
     }
+
+    private function getPercent($boardFk){
+        $all = 0;
+        $done = 0;
+        $sql = 'select count(*) from task where board_fk=:boardId';
+        $sql2= 'select count(*) from task where board_fk=:boardId and status=3';
+
+        if($stmt = $this->_db->prepare($sql)){
+            $stmt->bindParam(":boardId", $boardFK, PDO::PARAM_INT);
+            $stmt->execute();
+            $row = $stmt->fetch();
+            $all = $row[0];
+        }
+        if($stmt = $this->_db->prepare($sql2)){
+            $stmt->bindParam(":boardId", $boardFK, PDO::PARAM_INT);
+            $stmt->execute();
+            $row = $stmt->fetch();
+            $done = $row[0];
+        }
+        if($all == 0){
+        $percent = 0;
+        }else{
+        $percent = round(($done * 100 / $all),2);
+        }
+        echo "<th>" . $percent . "% </th>";
+}    
+
+    public function getStudents($teacherId)
+    {
+        $sql = "SELECT concat(user.firstname,user.lastname) as name, theme.themeName as themename,  student.averageGrade as grade, 
+                user.email as email, student.studyYear as syear, request.id as requestId FROM user JOIN student on student.user_fk=user.id 
+                JOIN request on student.id=request.student_fk
+                JOIN theme on theme.id=request.theme_fk
+                JOIN teacher on teacher.id=theme.teacher_fk
+                WHERE teacher.id=:teacherId;";
+    
+        if ($stmt = $this->_db->prepare($sql)) {
+            
+            $stmt->bindParam(":teacherId", $teacherId, PDO::PARAM_STR);
+            $stmt->execute();
+            while ($row = $stmt->fetch()) {
+                
+                echo "<form action=\"./progress.php\" method=\"get\">";
+                echo "<tr>
+                        <th>" . $row['name'] . "</th>
+                        <th><p>" . $row['themename'] . "</p></th>"
+                        . $this->getPercent($row['boardFK']). "
+                        
+                        <th><button type='submit' name='board' value=". $row['boardFk'] . " class=\"small_button\">Board</button></th>
+                        
+                        </tr>";
+
+            }
+        }
+    }
 }
