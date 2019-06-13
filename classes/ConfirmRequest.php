@@ -117,17 +117,14 @@ class ConfirmRequest
         }else{
         $percent = round(($done * 100 / $all),2);
         }
-        echo "<th>" . $percent . "% </th>";
+        return "<th>" . $percent . "% </th>";
 }    
 
     public function getStudents($teacherId)
     {
-        $sql = "SELECT concat(user.firstname,user.lastname) as name, theme.themeName as themename,  student.averageGrade as grade, 
-                user.email as email, student.studyYear as syear, request.id as requestId FROM user JOIN student on student.user_fk=user.id 
-                JOIN request on student.id=request.student_fk
-                JOIN theme on theme.id=request.theme_fk
-                JOIN teacher on teacher.id=theme.teacher_fk
-                WHERE teacher.id=:teacherId;";
+        $sql = "select concat(Concat(u.firstName,' '),u.lastName), th.themeName,b.id  
+        from user u inner join student s on s.user_fk=u.id inner join board b on s.board_fk=b.id inner 
+        join theme th on th.id=b.theme_fk inner join teacher t on t.id=th.teacher_fk where t.id=:teacherId";
     
         if ($stmt = $this->_db->prepare($sql)) {
             
@@ -137,13 +134,14 @@ class ConfirmRequest
                 
                 echo "<form action=\"./progress.php\" method=\"get\">";
                 echo "<tr>
-                        <th>" . $row['name'] . "</th>
-                        <th><p>" . $row['themename'] . "</p></th>"
-                        . $this->getPercent($row['boardFK']). "
+                        <th>" . $row[0] . "</th>
+                        <th><p>" . $row[1] . "</p></th>"
+                        . $this->getPercent($row[2]). "
                         
-                        <th><button type='submit' name='board' value=". $row['boardFk'] . " class=\"small_button\">Board</button></th>
+                        <th><button type='submit' name='board' value=". $row[2] . " class=\"small_button\">Board</button></th>
                         
-                        </tr>";
+                        </tr>
+                        </form>";
 
             }
         }

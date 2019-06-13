@@ -3,15 +3,16 @@
 function getThesisInfo($studentId) {
     $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME;
     $db = new PDO($dsn, DB_USER, DB_PASS);
-    $sql="SELECT theme.themeName as themeName, concat(user.firstName, user.lastName) as name, theme.description as description, theme.academicYear as year FROM board 
-            JOIN theme on board.theme_fk=theme.id JOIN teacher on teacher.id=theme.teacher_fk JOIN user on user.id=teacher.id where board.student_fk=:studentId and user.userType=0";
+    $sql="SELECT t.themeName as themeName, concat(u.firstName, u.lastName) as name, t.description as description, t.academicYear as year from theme t inner join teacher th on th.id=t.teacher_fk inner join board b on b.theme_fk =t.id inner join user u on u.id = th.user_fk where b.student_fk=:studentId";
 
     try{
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':studentId', $studentId, PDO::PARAM_INT);
         $stmt->execute();
         $result = $stmt->fetch();
+        
         echo "<h3>$result[0]</h3>
+        
               <p><strong>Teacher</strong>: $result[1]</p>
               <p><strong>Description</strong>: $result[2]</p>
               <p><strong>Academic Year</strong>:$result[3]</p>";
