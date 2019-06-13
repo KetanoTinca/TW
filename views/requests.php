@@ -39,7 +39,11 @@
         if (isset($_SESSION['teacher_id'])) {
             $request = new ConfirmRequest(NULL,$_SESSION['teacher_id']);
             echo $request->getRequest($_SESSION['teacher_id']);
+            if(isset($_GET['accept'])&& !(empty($_GET['accept']))){
+                $request->acceptRequest($_GET['accept']);
+            }
         }
+
         ?>
     </table>
 </section>

@@ -28,6 +28,12 @@
         if (isset($_SESSION['userType']) && $_SESSION['userType'] == 'student') {
 
             include 'choose_prof.php';
+            if( isset($_GET['cancel'])&& $_GET['cancel']=='true'){
+
+                deleteRequests($_SESSION['student_id']);
+
+            }
+
         } else { }
 
 

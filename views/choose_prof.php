@@ -55,6 +55,28 @@ function getGrade($studentId)
     return null;
 }
 
+function deleteRequests($studentId)
+{
+    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME;
+    $db = new PDO($dsn, DB_USER, DB_PASS);
+    try {
+        $sql = "DELETE FROM request WHERE student_fk=:studentId;";
+        if ($stmt = $db->prepare($sql)) {
+            $stmt->bindParam(":studentId", $studentId, PDO::PARAM_INT);
+            $stmt->execute();
+
+            return TRUE;
+        }
+        else{
+            return FALSE;
+        }
+    } catch(PDOException $e) {
+        return $e->getMessage();
+    }
+
+    return FALSE;
+
+}
 ?>
 
 <section id="teacher_list">
@@ -109,6 +131,11 @@ function getGrade($studentId)
             ?>
         </table>
         <div class="button_wrapper">
-            <button class="small_button" id="cancel_button">Cancel your current thesis request</button>
+            <form action="view-profs.php" method="get">
+
+            <button class="small_button" id="cancel_button" value="true" name="cancel" type="submit">Cancel your current thesis request</button>
+
+            </form>
+
             <div>
 </section>

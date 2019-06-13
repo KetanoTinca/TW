@@ -48,19 +48,6 @@ class Request
 
     }
 
-    public function deleteRequests($studentId)
-    {
-        try {
-            $sql = "DELETE FROM request WHERE student_fk=:studentId;";
-            if ($stmt = $this->_db->prepare($sql)) {
-                $stmt->bindParam(":student_fk", $studentId, PDO::PARAM_STR);
-                $stmt->execute();
-            }
-        } catch(PDOException $e) {
-            return $e->getMessage();
-        }
-    }
-
 
 }
 
